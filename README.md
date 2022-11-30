@@ -11,6 +11,7 @@ potentiometer on the handle of the device is used to effect steering. Battery vo
 are monitored and used to give audible warnings via a piezo element. Finally authentication of the rider is
 achieved via entering a code with their phone via Bluetooth Low Energy
 
+
 Module Descriptions:
 
 Auth_blk (Authorized Rider):
