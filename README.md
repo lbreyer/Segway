@@ -49,11 +49,10 @@ starts shifting (right shifting since LSB is first) data into a register.
 appended) register at the baud rate interval.
 
 piezo_drv:
-- The Piezo element is used to provide warnings.
-- Warning to people in vicinity when rider on
-- Warn rider when going too fast
-- Warn rider when battery is getting low
-- 3 Signals come to piezo to inform of various conditions.
+- The Piezo element is used to provide warnings. 3 Signals come to piezo to inform of various conditions.
+1. Warning to people in vicinity when rider on
+2. Warn rider when going too fast
+3. Warn rider when battery is getting low
 - Drive to piezo is simply digital square wave, and its complement.
 - Piezo will respond to signals in the 300Hz to 7kHz range
 - A piezo bender is a “speaker” that can be driven with the
@@ -64,10 +63,10 @@ SPI:
 - Simple uni-directional serial interface (Motorola long long ago)
 - Serial Peripheral Interconnect (very popular physical interface)
 - 4-wires for full duplex
-- MOSI (Master Out Serf In) (digital core will drive this to AFE)
-- MISO (Master In Serf Out) (not used in connection to AFE digital pots, only EEP)
-- SCLK (Serial Clock)
-- SS_n (Active low Serf Select) (Our system has 4 individual serf selects to
+1. MOSI (Master Out Serf In) (digital core will drive this to AFE)
+2. MISO (Master In Serf Out) (not used in connection to AFE digital pots, only EEP)
+3. SCLK (Serial Clock)
+4. SS_n (Active low Serf Select) (Our system has 4 individual serf selects to
 address the 4 dual potentiometers, and a fifth to address the EEPROM)
 - We use a 16-bit SPI packet. The master is changing MOSI on the falling edge of
 SCLK. The serf device (6-axis inertial sensor or A2D converter) changes MISO on the falling edge
