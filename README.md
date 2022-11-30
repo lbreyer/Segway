@@ -156,3 +156,63 @@ DC operating point, but the gyro readings determine the transient response.
 - AZ [15:0] will be used to calculate the pitch as seen by the accelerometer
 (ptch_acc). If ptch_acc>ptch then ptch_int will have a constant added to it.
 If ptch_acc<ptch then ptch_int will have a constant subtracted from it.
+
+Balance Control PID:
+- The control input (motor duty cycle and direction in our case) is based
+on a combination of terms. One term Proportional to the error. One
+term that is the Integral of the error over time, and one term that is
+proportional to the Derivative of the error term.
+
+PID (Soft Start Timer):
+- The PID unit will also generate the soft start timer (ss_tmr[7:0]) that
+is used in SegwayMath to ensure on power up the Segway does not
+jerk to a start.
+- We want this ramp of ss_tmr to be in the 2-3 second range.
+- ss_tmr[7:0] will be formed from the upper 8-bits of a 27-bit timer.
+- The FPGA of the Segway is powered and running initially, but it is waiting
+for a code from the auth_blk (authorization block) to actually enable the
+balancing feature and allow a rider to ride it. When this code comes in via a
+Bluetooth link the pwr_up signal will be asserted.
+- The counter that forms ss_tmr should be held in a zero state until pwr_up is
+asserted.
+           
+Segway Math (steering input):
+- The PID controller ensures the over all forward/reverse drive of the motors to
+keep the platform balanced. However, to effect steering a differential signal
+is added/subtracted to the left/right motors. This steering signal comes from
+a slide potentiometer that the rider controls.
+- steer_pot value is clipped to 0x200 to
+0xE00, then is converted to a signed
+number by subtraction of 12’h7ff. 3/16
+of this value is added or subtracted to
+13-bit sign extended PID_ss to form
+lft_torque/rght_torque if steering is
+enabled.
+                 
+DC Motor Dead Band:
+- We will scale/shape our desired torque to compensate
+for the DC motors dead zone and compress it into a
+small range of desired torques:
+(-LOW_TORQUE_BAND,LOW_TORQUE_BAND).
+- When: |desired_torque| < LOW_TORQUE_BAND we
+are in the steep part of the compensation and will scale
+the desired_torque by GAIN_MULTIPLIER (much
+greater than unity). When |desired_torque| ≥
+LOW_TORQUE_BAND desired_torque will not be
+scaled up, but will have MIN_DUTY_CYCLE added
+to it if it is positive, or subtracted if it is negative.
+- If lft_toque is negative (MSB set) then the compensated torque is:
+lft_torque - MIN_DUTY, otherwise it is lft_torque + MIN_DUTY. If the
+abs(lft_torque) < LOW_TORQUE_BAND (i.e. we are inside the deadzone)
+we need to use lft_torque*$signed(GAIN_MULT) to form the shaped torque.
+Finally if the Segway is not powered up we set the shaped torque to zero.
+
+steer_en:
+
+mtr_drv:
+- Serves 4 main functions.
+1. Synch lft_spd/rght_spd from balance_cntrl to the PWM cycle
+2. Convert signed lft_spd/rght_spd to magnitude to drive PWM.
+3. Monitor over current signals (OVR_I_lft/OVR_I_right) to perform shut
+down if over current occurring too frequently
+4. Distribute PWM signals to H-Bridges that drive the motors.
