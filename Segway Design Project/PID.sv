@@ -1,0 +1,72 @@
+module PID #(parameter fast_sim = 1'b1) (clk, rst_n, vld, ptch, ptch_rt, pwr_up, rider_off, PID_cntrl, ss_tmr);
+
+input clk, rst_n, vld, pwr_up, rider_off;
+input signed [15:0] ptch, ptch_rt;
+
+output signed [11:0] PID_cntrl;
+output [7:0] ss_tmr;
+
+logic signed [15:0] PID_ext;
+logic signed [14:0] P_term, I_term;
+logic signed [12:0] D_term;
+logic signed [9:0] ptch_err_sat;
+
+logic signed [17:0] integrator;
+logic signed [17:0] pitch_err_sat_ext, pitch_summed, valid_input, ff_in;
+logic ov;
+logic [26:0] full_tmr, ff_tmr_in, tmr_itr;
+
+logic [8:0] increment;
+
+localparam P_COEFF = 5'h0C;
+
+// Initial generate statement, defines I_term and clk regulation based on fast_sim condition
+generate if (fast_sim) begin
+        assign increment = 9'h100;
+	assign I_term = (~integrator[17] & |integrator[16:15]) ? 15'h3FFF : 
+		(integrator[17] & ~&integrator[16:15]) ? 15'h4000 : integrator[15:1];
+   end else begin
+        assign increment = 9'h001;
+	assign I_term = {{3{integrator[17]}}, integrator[17:6]};
+   end endgenerate
+
+
+// I term ff
+always_ff @(posedge clk, negedge rst_n)
+  if (!rst_n)
+    integrator <= 18'h00000; // asynch reset
+  else if (rider_off)
+    integrator <= 18'h00000; // Detects rider off of seg
+  else if (vld & ~ov)
+    integrator <= integrator + pitch_err_sat_ext; // Checks valid and overflow then integrates
+
+always_ff @(posedge clk, negedge rst_n)
+  if (!rst_n)
+    full_tmr <= 27'h0000000; // asynch reset
+  else if (~pwr_up)
+    full_tmr <= 27'h0000000; // if pwr off then reset
+  else if (~&full_tmr[26:8])
+    full_tmr <= full_tmr + increment; // checks for count up then adds
+
+
+// SET P TERM
+assign ptch_err_sat = (~ptch[15] & |ptch[14:9]) ? 10'h1FF : (ptch[15] & ~&ptch[14:9]) ? 10'h200 : ptch[9:0]; // pitch saturation
+assign P_term = ptch_err_sat * $signed(P_COEFF); // Define P term
+
+// SET I TERM
+assign pitch_err_sat_ext = {{8{ptch_err_sat[9]}}, ptch_err_sat}; // sign extend PES
+assign pitch_summed = integrator + pitch_err_sat_ext;
+assign ov = (pitch_err_sat_ext[17] ^~ integrator[17]) & (pitch_err_sat_ext[17] ^ pitch_summed[17]); // Overflow logic
+
+assign ss_tmr = full_tmr[26:19];
+
+// SET D TERM
+assign D_term = ~({{3{ptch_rt[15]}}, ptch_rt[15:6]});
+
+// SET PID CNTRL
+assign PID_ext = {P_term[14], P_term[14:0]} + {I_term[14], I_term} + {{3{D_term[12]}}, D_term[12:0]};
+assign PID_cntrl = (~PID_ext[15] & |PID_ext[14:11]) ? 12'h7FF : (PID_ext[15] & ~&PID_ext[14:11]) ? 12'h800 : PID_ext[11:0];
+
+endmodule
+
+

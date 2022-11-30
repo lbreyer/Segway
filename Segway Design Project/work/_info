@@ -1,0 +1,784 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dI:/ECE551/EX23
+vA2D_intf
+Z0 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
+Z1 !s110 1669828372
+!i10b 1
+!s100 47C6mJGBhTTfd]<9VXjRS3
+IWFK;1[:Q`VAUJi2[FPlJT1
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
+!s105 A2D_intf_sv_unit
+S1
+Z3 dI:/ECE551/Segway Design Project
+w1668788614
+8I:/ECE551/Segway Design Project/A2D_intf.sv
+FI:/ECE551/Segway Design Project/A2D_intf.sv
+L0 1
+Z4 OE;L;10.3c;59
+r1
+!s85 0
+31
+!s108 1669828372.583000
+!s107 I:/ECE551/Segway Design Project/A2D_intf.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/Segway Design Project/A2D_intf.sv|
+!i113 0
+Z5 o-work work -sv -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+n@a2@d_intf
+vADC128S_FC
+R0
+Z6 !s110 1669828373
+!i10b 1
+!s100 ]BP2dF:h5KjCbb`f727Ye1
+Il6S8j1^3gJWOb96Sem[nz1
+R2
+!s105 ADC128S_FC_sv_unit
+S1
+R3
+w1657661166
+8I:/ECE551/Segway Design Project/ADC128S_FC.sv
+FI:/ECE551/Segway Design Project/ADC128S_FC.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1669828372.938000
+!s107 I:/ECE551/Segway Design Project/ADC128S_FC.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/Segway Design Project/ADC128S_FC.sv|
+!i113 0
+R5
+n@a@d@c128@s_@f@c
+vasynch_rst_ff
+R0
+Z7 !s110 1669828375
+!i10b 1
+!s100 ^5e7RGkO^?09o7zRm08S^1
+Iic>9fZK;VGLB[Nec3k]7S2
+R2
+Z8 !s105 rst_synch_sv_unit
+S1
+R3
+Z9 w1665168726
+Z10 8I:/ECE551/Segway Design Project/rst_synch.sv
+Z11 FI:/ECE551/Segway Design Project/rst_synch.sv
+L0 14
+R4
+r1
+!s85 0
+31
+Z12 !s108 1669828375.022000
+Z13 !s107 I:/ECE551/Segway Design Project/rst_synch.sv|
+Z14 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/Segway Design Project/rst_synch.sv|
+!i113 0
+R5
+vAuth_blk
+R0
+R6
+!i10b 1
+!s100 eAlCJn^PZ1C9D33LQg48`1
+I2SBWTHJJ>]mzY_E5OoQ1M1
+R2
+!s105 Auth_blk_sv_unit
+S1
+R3
+Z15 w1667574632
+Z16 8I:/ECE551/Segway Design Project/Auth_blk.sv
+Z17 FI:/ECE551/Segway Design Project/Auth_blk.sv
+L0 1
+R4
+r1
+!s85 0
+31
+Z18 !s108 1669828373.311000
+Z19 !s107 I:/ECE551/Segway Design Project/Auth_blk.sv|
+Z20 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/Segway Design Project/Auth_blk.sv|
+!i113 0
+R5
+n@auth_blk
+XAuth_blk_sv_unit
+R0
+R6
+!i10b 1
+!s100 <NUQN;N25ZK?:QmPaG2U[3
+Ie6ZC;7D:03NbBSfKLz[1G0
+Ve6ZC;7D:03NbBSfKLz[1G0
+!i103 1
+S1
+R3
+R15
+R16
+R17
+L0 68
+R4
+r1
+!s85 0
+31
+R18
+R19
+R20
+!i113 0
+R5
+n@auth_blk_sv_unit
+vbalance_cntrl
+R0
+R6
+!i10b 1
+!s100 fmB0QHSbgeJB31j94]9H90
+IKSXmW8ZU:Ah;Q3H4J6aam2
+R2
+!s105 balance_cntrl_sv_unit
+S1
+R3
+Z21 w1667582493
+Z22 8I:/ECE551/Segway Design Project/balance_cntrl.sv
+Z23 FI:/ECE551/Segway Design Project/balance_cntrl.sv
+L0 1
+R4
+r1
+!s85 0
+31
+Z24 !s108 1669828373.648000
+Z25 !s107 I:/ECE551/Segway Design Project/balance_cntrl.sv|
+Z26 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/Segway Design Project/balance_cntrl.sv|
+!i113 0
+R5
+Xbalance_cntrl_sv_unit
+R0
+R6
+!i10b 1
+!s100 ^[E8EPbT9iKo_cPR8ie7H0
+Iz8F3_TPGklPb<4T]m^9Y=3
+Vz8F3_TPGklPb<4T]m^9Y=3
+!i103 1
+S1
+R3
+R21
+R22
+R23
+L0 19
+R4
+r1
+!s85 0
+31
+R24
+R25
+R26
+!i113 0
+R5
+vbaud_cnt
+R0
+Z27 !s110 1669828377
+!i10b 1
+!s100 [^dh7^McQJHAWTbMbN:7Y0
+IK8lzlFd[:S7;S7ZOo_@Th2
+R2
+Z28 !s105 UART_rx_sv_unit
+S1
+R3
+Z29 w1666021870
+Z30 8I:/ECE551/Segway Design Project/UART_rx.sv
+Z31 FI:/ECE551/Segway Design Project/UART_rx.sv
+L0 73
+R4
+r1
+!s85 0
+31
+Z32 !s108 1669828377.638000
+Z33 !s107 I:/ECE551/Segway Design Project/UART_rx.sv|
+Z34 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/Segway Design Project/UART_rx.sv|
+!i113 0
+R5
+vbd_cnt
+R0
+R1
+!i10b 1
+!s100 fF6L18cWKCLmiRV@MKFfe2
+I`[<N6V;cB`4]9Peod2k6]0
+R2
+Z35 !s105 UART_tx_sv_unit
+S1
+R3
+Z36 w1666021788
+Z37 8I:/ECE551/Segway Design Project/UART_tx.sv
+Z38 FI:/ECE551/Segway Design Project/UART_tx.sv
+L0 64
+R4
+r1
+!s85 0
+31
+Z39 !s108 1669828372.221000
+Z40 !s107 I:/ECE551/Segway Design Project/UART_tx.sv|
+Z41 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/Segway Design Project/UART_tx.sv|
+!i113 0
+R5
+vdone_ff
+R0
+R1
+!i10b 1
+!s100 QH6z5l310b:jMAQI`OCA40
+IQCMJ:Ell<=TS<Z:7jTjd;1
+R2
+R35
+S1
+R3
+R36
+R37
+R38
+L0 118
+R4
+r1
+!s85 0
+31
+R39
+R40
+R41
+!i113 0
+R5
+vinert_intf
+R0
+Z42 !s110 1669828374
+!i10b 1
+!s100 g4_`FQjS4]]Teb=8aPmUH2
+IHSim:M@c]76Q3mI2<n:J`2
+R2
+!s105 inert_intf_sv_unit
+S1
+R3
+w1669411094
+8I:/ECE551/Segway Design Project/inert_intf.sv
+FI:/ECE551/Segway Design Project/inert_intf.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1669828373.983000
+!s107 I:/ECE551/Segway Design Project/inert_intf.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/Segway Design Project/inert_intf.sv|
+!i113 0
+R5
+viq_cnt
+R0
+Z43 !s110 1669828620
+!i10b 1
+!s100 kg>9OQk44T0`Dz4[DkPed2
+IGXmRg?ODnoi;k:[PNFX@Z0
+R2
+Z44 !s105 PWM11_sv_unit
+S1
+R3
+Z45 w1669828617
+Z46 8I:/ECE551/Segway Design Project/PWM11.sv
+Z47 FI:/ECE551/Segway Design Project/PWM11.sv
+L0 38
+R4
+r1
+!s85 0
+31
+Z48 !s108 1669828620.416000
+Z49 !s107 I:/ECE551/Segway Design Project/PWM11.sv|
+Z50 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/Segway Design Project/PWM11.sv|
+!i113 0
+R5
+vmtr_drv
+R0
+R42
+!i10b 1
+!s100 b]FYJ?H8llcabQ@g;o5VY2
+I58Gh2aO=BY=ajJ3e8L[8^2
+R2
+!s105 mtr_drv_sv_unit
+S1
+R3
+w1669826906
+8I:/ECE551/Segway Design Project/mtr_drv.sv
+FI:/ECE551/Segway Design Project/mtr_drv.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1669828374.320000
+!s107 I:/ECE551/Segway Design Project/mtr_drv.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/Segway Design Project/mtr_drv.sv|
+!i113 0
+R5
+vPID
+R0
+Z51 !s110 1669828378
+!i10b 1
+!s100 WTzlOz:DinzEPk]5hJ9X90
+IZ1^E>ERUZjC@:CkJOW[;l3
+R2
+!s105 PID_sv_unit
+S1
+R3
+w1667582300
+8I:/ECE551/Segway Design Project/PID.sv
+FI:/ECE551/Segway Design Project/PID.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1669828378.018000
+!s107 I:/ECE551/Segway Design Project/PID.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/Segway Design Project/PID.sv|
+!i113 0
+R5
+n@p@i@d
+vpiezo_drv
+R0
+R42
+!i10b 1
+!s100 3?B@[APbW]=5gz2Dn`HXZ3
+I;n]Ii@5FieFH=Bo:k>;ei3
+R2
+!s105 piezo_drv_sv_unit
+S1
+R3
+w1668614246
+8I:/ECE551/Segway Design Project/piezo_drv.sv
+FI:/ECE551/Segway Design Project/piezo_drv.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1669828374.678000
+!s107 I:/ECE551/Segway Design Project/piezo_drv.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/Segway Design Project/piezo_drv.sv|
+!i113 0
+R5
+vPWM11
+R0
+R43
+!i10b 1
+!s100 cYE85J8_Gd]=<LY@b<;Zo3
+InB;g2jN<^gb?5TJB0AbKi1
+R2
+R44
+S1
+R3
+R45
+R46
+R47
+L0 1
+R4
+r1
+!s85 0
+31
+R48
+R49
+R50
+!i113 0
+R5
+n@p@w@m11
+vrdy_ff
+R0
+R27
+!i10b 1
+!s100 UUI4b08f@lP_dXB[BGdJc0
+IQQ^@FiK:;igGQFPZBRCkh3
+R2
+R28
+S1
+R3
+R29
+R30
+R31
+L0 122
+R4
+r1
+!s85 0
+31
+R32
+R33
+R34
+!i113 0
+R5
+vrst_synch
+R0
+R7
+!i10b 1
+!s100 0TSJb:HUCbQDdGJaHBBT?2
+I9a1IPI@2Be=ja:2<elObJ3
+R2
+R8
+S1
+R3
+R9
+R10
+R11
+L0 1
+R4
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R5
+vrx_shft_cnt
+R0
+R27
+!i10b 1
+!s100 YRJ`nJ@ijJJ2hRzd3PNb^0
+I3efhR<LCmgk5[C:6I6c;C2
+R2
+R28
+S1
+R3
+R29
+R30
+R31
+L0 91
+R4
+r1
+!s85 0
+31
+R32
+R33
+R34
+!i113 0
+R5
+vrx_shift_ff
+R0
+R27
+!i10b 1
+!s100 ?JAZ1:iOo1Omf]3ChR?GS1
+I6fdaOEKC@lbj=l_1R`KY13
+R2
+R28
+S1
+R3
+R29
+R30
+R31
+L0 108
+R4
+r1
+!s85 0
+31
+R32
+R33
+R34
+!i113 0
+R5
+vSegway
+R0
+R7
+!i10b 1
+!s100 SLco5T87E;Yoz:mckF26:2
+IH:0i=YlzPcHo`VK7F?dC;2
+R2
+!s105 Segway_sv_unit
+S1
+R3
+w1669410920
+8I:/ECE551/Segway Design Project/Segway.sv
+FI:/ECE551/Segway Design Project/Segway.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1669828375.492000
+!s107 I:/ECE551/Segway Design Project/Segway.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/Segway Design Project/Segway.sv|
+!i113 0
+R5
+n@segway
+vSegway_tb
+R0
+Z52 !s110 1669828376
+!i10b 1
+!s100 :X;zn7NX?Q@R8:jC9ddIk1
+IVSnI1n>AkKfVV<C;gOVdJ2
+R2
+!s105 Segway_tb_sv_unit
+S1
+R3
+w1669413768
+8I:/ECE551/Segway Design Project/Segway_tb.sv
+FI:/ECE551/Segway Design Project/Segway_tb.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1669828375.880000
+!s107 I:/ECE551/Segway Design Project/Segway_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/Segway Design Project/Segway_tb.sv|
+!i113 0
+R5
+n@segway_tb
+vSegwayMath
+R0
+R51
+!i10b 1
+!s100 R[ee2SK=2:Zd]LEiYW5Wb2
+IK=5iCi@8>eAS0TizF;>9W2
+R2
+!s105 SegwayMath_sv_unit
+S1
+R3
+w1664375753
+8I:/ECE551/Segway Design Project/SegwayMath.sv
+FI:/ECE551/Segway Design Project/SegwayMath.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1669828378.370000
+!s107 I:/ECE551/Segway Design Project/SegwayMath.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/Segway Design Project/SegwayMath.sv|
+!i113 0
+R5
+n@segway@math
+vSegwayModel
+R0
+R52
+!i10b 1
+!s100 `hf4PBhd9hd?5Q>6_2k6Y2
+IDWzJW=:Hg[C:GOL?4LAbo1
+R2
+!s105 SegwayModel_sv_unit
+S1
+R3
+w1667700392
+8I:/ECE551/Segway Design Project/SegwayModel.sv
+FI:/ECE551/Segway Design Project/SegwayModel.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1669828376.223000
+!s107 I:/ECE551/Segway Design Project/SegwayModel.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/Segway Design Project/SegwayModel.sv|
+!i113 0
+R5
+n@segway@model
+vshft_cnt
+R0
+R1
+!i10b 1
+!s100 7K2DJj7d`F37VIfW4XcJm2
+IZE1l4?E4io4QkgoUE=ahZ0
+R2
+R35
+S1
+R3
+R36
+R37
+R38
+L0 82
+R4
+r1
+!s85 0
+31
+R39
+R40
+R41
+!i113 0
+R5
+vshift_ff
+R0
+R1
+!i10b 1
+!s100 [LTZ9z=fG5En77ETQQdJZ2
+IJiZb23A@=9o2c@m[]L6m03
+R2
+R35
+S1
+R3
+R36
+R37
+R38
+L0 99
+R4
+r1
+!s85 0
+31
+R39
+R40
+R41
+!i113 0
+R5
+vSPI_ADC128S
+R0
+R52
+!i10b 1
+!s100 FMj[4W2=9oUfTJcKEmN2N0
+I^dS8ZC[[;U9lX^I;chiB=0
+R2
+!s105 SPI_ADC128S_sv_unit
+S1
+R3
+w1442688362
+8I:/ECE551/Segway Design Project/SPI_ADC128S.sv
+FI:/ECE551/Segway Design Project/SPI_ADC128S.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1669828376.575000
+!s107 I:/ECE551/Segway Design Project/SPI_ADC128S.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/Segway Design Project/SPI_ADC128S.sv|
+!i113 0
+R5
+n@s@p@i_@a@d@c128@s
+vSPI_mnrch
+R0
+R27
+!i10b 1
+!s100 Qj<Fb?17gXS5^H5BY^VjR3
+Il14i>:0hziGB3A_3joS0;2
+R2
+!s105 SPI_mnrch_sv_unit
+S1
+R3
+w1667583120
+8I:/ECE551/Segway Design Project/SPI_mnrch.sv
+FI:/ECE551/Segway Design Project/SPI_mnrch.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1669828377.294000
+!s107 I:/ECE551/Segway Design Project/SPI_mnrch.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/Segway Design Project/SPI_mnrch.sv|
+!i113 0
+R5
+n@s@p@i_mnrch
+vsr_ff
+R0
+R43
+!i10b 1
+!s100 ?SG^EmmP3z18cJWIEN0DU1
+I9;H=H?^BBb?Ja7jUd19dl2
+R2
+R44
+S1
+R3
+R45
+R46
+R47
+L0 23
+R4
+r1
+!s85 0
+31
+R48
+R49
+R50
+!i113 0
+R5
+vsteer_en
+R0
+R27
+!i10b 1
+!s100 h:`KNRaJiLFoYz0A;6dWj2
+Iom61f:bbTc15mZInl?]n<3
+R2
+!s105 steer_en_sv_unit
+S1
+R3
+w1669655085
+8I:/ECE551/Segway Design Project/steer_en.sv
+FI:/ECE551/Segway Design Project/steer_en.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1669828376.941000
+!s107 I:/ECE551/Segway Design Project/steer_en.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/Segway Design Project/steer_en.sv|
+!i113 0
+R5
+vsteer_en_SM
+R0
+!s110 1669828790
+!i10b 1
+!s100 >PX0JR;cnIS^c7WH87YBz1
+I<U@S3PN6ZYIL`aTTl=d>l0
+R2
+!s105 steer_en_SM_sv_unit
+S1
+R3
+w1666017576
+8I:/ECE551/Segway Design Project/steer_en_SM.sv
+FI:/ECE551/Segway Design Project/steer_en_SM.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1669828790.759000
+!s107 I:/ECE551/Segway Design Project/steer_en_SM.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE551/Segway Design Project/steer_en_SM.sv|
+!i113 0
+R5
+nsteer_en_@s@m
+vUART_rx
+R0
+R27
+!i10b 1
+!s100 Qe4?`C1h?eHUmz<>W_R@Y3
+I`fXk>ndT6iZ=]LhW4;7X>3
+R2
+R28
+S1
+R3
+R29
+R30
+R31
+L0 1
+R4
+r1
+!s85 0
+31
+R32
+R33
+R34
+!i113 0
+R5
+n@u@a@r@t_rx
+vUART_tx
+R0
+R1
+!i10b 1
+!s100 N[j[6:@<3AYERFCGaJmeB1
+I8V4@@;3mG??z>oSP`Q_B41
+R2
+R35
+S1
+R3
+R36
+R37
+R38
+L0 1
+R4
+r1
+!s85 0
+31
+R39
+R40
+R41
+!i113 0
+R5
+n@u@a@r@t_tx
