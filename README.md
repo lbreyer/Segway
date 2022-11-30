@@ -36,12 +36,12 @@ the last reception was ‘s’ and the rider_off signal is high.
 
 UART (RS-232):
 - RS-232 signal phases
-- Idle
-- Start bit
-- Data (8-data for our project)
-- Parity (no parity for our project)
-- Stop bit – channel returns to idle condition
-- Idle or Start next frame
+1. Idle
+2. Start bit
+3. Data (8-data for our project)
+4. Parity (no parity for our project)
+5. Stop bit – channel returns to idle condition
+6. Idle or Start next frame
 
 - Receiver monitors for falling edge of Start bit. Counts off 1.5 bit times and
 starts shifting (right shifting since LSB is first) data into a register.
