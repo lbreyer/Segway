@@ -65,7 +65,7 @@ always_ff @(posedge clk, negedge rst_n)
   end
   //else if (set_done) begin
   //  done <= 1'b1;
-  else begin
+  else
     done <= set_done;
   end
  

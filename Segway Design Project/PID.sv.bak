@@ -12,9 +12,9 @@ logic signed [12:0] D_term;
 logic signed [9:0] ptch_err_sat;
 
 logic signed [17:0] integrator;
-logic signed [17:0] pitch_err_sat_ext, pitch_summed;
+logic signed [17:0] pitch_err_sat_ext, pitch_summed, ff_in;
 logic ov;
-logic [26:0] full_tmr;
+logic [26:0] full_tmr, ff_tmr_in, tmr_itr;
 
 logic [8:0] increment;
 

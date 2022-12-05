@@ -18,6 +18,10 @@ SPI_mnrch iSPI(.clk(clk), .rst_n(rst_n), .SS_n(SS_n), .SCLK(SCLK), .MOSI(MOSI), 
 
 assign wt_data = {2'b00,channel[2:0],11'h000};
 assign channel = rr_cntr == 2'b00 ? 3'b000 : rr_cntr == 2'b01 ? 3'b100 : rr_cntr == 2'b10 ? 3'b101 : 3'b110;
+//assign lft_ld = update & (rr_cntr == 2'b00) ? rd_data[11:0] : lft_ld;
+//assign rght_ld = update & (rr_cntr == 2'b01) ? rd_data[11:0] : rght_ld;
+//assign steer_pot = update & (rr_cntr == 2'b10) ? rd_data[11:0] : steer_pot;
+//assign batt = update & (rr_cntr == 2'b11) ? rd_data[11:0] : batt;
 
 // Round Robin Counter
 always_ff @(posedge clk or negedge rst_n)
