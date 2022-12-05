@@ -260,7 +260,7 @@ module SegwayModel(clk,RST_n,SS_n,SCLK,MISO,MOSI,INT,PWM1_lft,PWM2_lft,
   always_ff @(posedge clk, negedge rst_n)
     if (!rst_n)
 	  time_since_rise_rght <= 12'h000;
-	else if (lft_rise)
+	else if (rght_rise)
 	  time_since_rise_rght <= 12'h000;
 	else
 	  time_since_rise_rght <= time_since_rise_lft + 1;	
@@ -283,7 +283,7 @@ module SegwayModel(clk,RST_n,SS_n,SCLK,MISO,MOSI,INT,PWM1_lft,PWM2_lft,
 	else if (time_since_rise_lft[11])
 	  lft_duty <= 1'b0;
 	else if (lft_fall)
-	  lft_duty <= {1'b0,lft_frwrd_cnt} -  {1'b0,lft_rev_cnt};
+	  lft_duty <= ((|lft_frwrd_cnt)===1'bx) ? 12'h000 : {1'b0,lft_frwrd_cnt} -  {1'b0,lft_rev_cnt};
 
   always_ff @(posedge clk, negedge rst_n)
     if (!rst_n)
@@ -291,7 +291,7 @@ module SegwayModel(clk,RST_n,SS_n,SCLK,MISO,MOSI,INT,PWM1_lft,PWM2_lft,
 	else if (time_since_rise_rght[11])
 	  rght_duty <= 1'b0;
 	else if (rght_fall)
-	  rght_duty <= {1'b0,rght_frwrd_cnt} - {1'b0,rght_rev_cnt};	 
+	  rght_duty <= ((|lft_frwrd_cnt)===1'bx) ? 12'h000 : {1'b0,rght_frwrd_cnt} - {1'b0,rght_rev_cnt};	 
 
   always_ff @(posedge clk, negedge rst_n)
     if (!rst_n)
