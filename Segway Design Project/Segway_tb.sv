@@ -52,6 +52,8 @@ UART_tx iTX(.clk(clk),.rst_n(rst_n),.TX(RX_TX),.trmt(send_cmd),.tx_data(cmd),.tx
 rst_synch iRST(.clk(clk),.RST_n(RST_n),.rst_n(rst_n));
 
 initial begin
+  ///Luke's Test incase the tasks do not work.
+  /*
   clk = 0;
   RST_n = 0;
   cmd = 8'h00;
@@ -83,9 +85,27 @@ initial begin
     rider_lean = 16'h0000;
 
   repeat(800000) @(posedge clk);
+  */
+  //Rewrote with the use of tasks
+  //Test for PID
+  Initialize;
+  ld_cell_lft = 12'h200;
+  ld_cell_rght = 12'h200;
+  SendCmd(8'h67);
+
+  rep_clock(800000)
+    rider_lean = 16'h0FFF;
+
+  rep_clock(1600000)
+    rider_lean = 16'h0000;
+
+  rep_clock(800000)
 
   $stop();
+  //Rider On Test
+
 end
+  'include "tb_tasks.sv"
 
 always
   #10 clk = ~clk;
