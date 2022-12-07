@@ -100,13 +100,39 @@ initial begin
   repeat(800000) @(posedge clk);
 
   $stop();
-  //Rider On Test
+  //Rider On Test(left and right load cells have already been set.)
+  batt = 0xFFF;
+  check_value(0, iDUT.pwr_up, "pwr_up", "RIDER ON");
+  send_cmd(8'h67);
+  repeat(10000) @(posedge clk);
+  check_value(1, iDUT.pwr_up, "pwr_up", "RIDER ON");
+
+  //Waiting to test steerpot
+  repeat(2000000) @(posedge clk);
+
+  //Turning Left and Right
+  steer_pot = 12'h200;
+  repeat(2000000) @(posedge clk);
+  check_value(1, ((iPhys.omega_rght < iPHYS.omega_lft) || (iPhys.omega_rght > iPHYS.omega_lft)), "left or right ", "Turning_Left_or_Right");
+
+  steer_pot = 12'hFFF;
+  check_value(1, ((iPhys.omega_rght < iPHYS.omega_lft) || (iPhys.omega_rght > iPHYS.omega_lft)), "left or right", "Turning_Left_or_Right");
+
+  //Testing Rider OFF
+  ld_cell_lft = 0;
+  ld_cell_rght = 0;
+  repeat(2000000) @(posedge clk);
+  check_value(0, iDut.iBal.en_steer, "en_steer", "Rider_OFF");
+
+  send_cmd(8'h73);
+  repeat(2000000) @(posedge clk);
+  check_value(0, iDUT.pwr_up, "pwr_up", "RIDER ON");
+
 
 end
+  'include "tb_tasks.sv"
 
 always
   #10 clk = ~clk;
-
-`include "tb_tasks.sv"
 
 endmodule	
