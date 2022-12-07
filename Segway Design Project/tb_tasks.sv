@@ -4,30 +4,30 @@
 
 //This task intalize the tests.
 task Initialize;
-	clk = 0;
-	RST_n = 0;
-	cmd = 8'h00;
-	send_cmd = 0;
-	rider_lean = 16'h0000;
-	ld_cell_lft = 12'h000;
-	ld_cell_rght = 12'h000;
-	steerPot = 12'h000;
-	batt = 12'h000;
-	OVR_I_lft = 0; 
-	OVR_I_rght = 0;
-	@(posedge clk);
-	@(negedge clk);
-	RST_n = 1;
+  clk = 0;
+  RST_n = 0;
+  cmd = 8'h00;
+  send_cmd = 0;
+  rider_lean = 16'h0000;
+  ld_cell_lft = 12'h000;
+  ld_cell_rght = 12'h000;
+  steerPot = 12'h000;
+  batt = 12'h000;
+  OVR_I_lft = 0; 
+  OVR_I_rght = 0;
+  @(posedge clk);
+  @(negedge clk);
+    RST_n = 1; 
 endtask
 
 //Used to send the command to UART
 task SendCmd(input byte command);
-	(@negedge clk);
+	@(negedge clk);
 	cmd = command;
 	send_cmd  = 1;
-	(@negedge clk);
+	@(posedge clk);
+	@(negedge clk);
 	send_cmd = 0;
-	(@posedge cmd_sent);
 
 endtask
 
@@ -45,9 +45,4 @@ task check_theta_platorm(integer expected, integer actual, string signal_name, s
 		$$display("Error - Test Name: %s, Signal Name: %s, Actual Value: %h, Expected Value: %h", test_name, signal_name, actual, expected);
 		$stop();
 	end
-endtask
-
-//Tasks to repeat clock
-task rep_clock(input integer num);
-	repeat(num) (@posedge clk);
 endtask
