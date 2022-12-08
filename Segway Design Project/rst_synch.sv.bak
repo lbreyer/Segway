@@ -1,7 +1,7 @@
 module rst_synch(RST_n, clk, rst_n);
 
 input RST_n, clk;
-output reg rst_n;
+output rst_n;
 
 logic temp;
 

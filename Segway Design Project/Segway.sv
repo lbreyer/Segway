@@ -36,7 +36,7 @@ module Segway(clk,RST_n,INERT_SS_n,INERT_MOSI,INERT_SCLK,
   wire OVR_I_lft,OVR_I_rght;
   
   localparam BATT_THRES = 12'h800;
-  localparam fast_sim = 0;
+  localparam fast_sim = 1;
   
   //////////////////////////////////////////////////////
   // Instantiate Auth_blk that handles authorization //

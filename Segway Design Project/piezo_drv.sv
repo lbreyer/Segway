@@ -16,7 +16,7 @@ typedef enum reg [2:0] { IDLE, G6, C7, E7_1, G7_1, E7_2, G7_2} state_t;
 
 localparam [27:0] repeat_const = 28'h8F0D180;
 localparam [14:0] G6_prd = 15'h7C90;
-localparam [22:0] G6_dur = 23'h7FFFFF; // TODO: Fix durations
+localparam [22:0] G6_dur = 23'h7FFFFF;
 localparam [14:0] C7_prd = 15'h5D51;
 localparam [22:0] C7_dur = 23'h7FFFFF;
 localparam [14:0] E7_prd = 15'h4A11;

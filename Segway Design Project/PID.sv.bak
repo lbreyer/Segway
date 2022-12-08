@@ -12,9 +12,9 @@ logic signed [12:0] D_term;
 logic signed [9:0] ptch_err_sat;
 
 logic signed [17:0] integrator;
-logic signed [17:0] pitch_err_sat_ext, pitch_summed, ff_in;
+logic signed [17:0] pitch_err_sat_ext, pitch_summed;
 logic ov;
-logic [26:0] full_tmr, ff_tmr_in, tmr_itr;
+logic [26:0] full_tmr;
 
 logic [8:0] increment;
 
@@ -54,8 +54,8 @@ assign ptch_err_sat = (~ptch[15] & |ptch[14:9]) ? 10'h1FF : (ptch[15] & ~&ptch[1
 assign P_term = ptch_err_sat * $signed(P_COEFF); // Define P term
 
 // SET I TERM
-assign pitch_err_sat_ext = {{8{ptch_err_sat[9]}}, ptch_err_sat}; // sign extend PES
-assign pitch_summed = integrator + pitch_err_sat_ext;
+//assign pitch_err_sat_ext = {{8{ptch_err_sat[9]}}, ptch_err_sat}; // sign extend PES
+assign pitch_summed = integrator + {{8{ptch_err_sat[9]}}, ptch_err_sat};
 assign ov = (pitch_err_sat_ext[17] ^~ integrator[17]) & (pitch_err_sat_ext[17] ^ pitch_summed[17]); // Overflow logic
 
 assign ss_tmr = full_tmr[26:19];

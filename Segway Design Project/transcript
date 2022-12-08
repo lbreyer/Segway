@@ -1,0 +1,1961 @@
+# //  Questa Sim
+# //  Version 2021.2_2 linux Jun 19 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading project Segway Design Project
+# 0 compiles, 21 failed with no errors.
+# Compile of A2D_intf.sv was successful.
+# Compile of ADC128S_FC.sv was successful.
+# Compile of Auth_blk.sv was successful with warnings.
+# Compile of balance_cntrl.sv was successful with warnings.
+# Compile of inert_intf.sv was successful.
+# Compile of inertial_integrator.sv was successful.
+# Compile of mtr_drv.sv was successful.
+# Compile of PID.sv was successful.
+# Compile of piezo_drv.sv was successful with warnings.
+# Compile of PWM11.sv was successful.
+# Compile of rst_synch.sv was successful.
+# Compile of Segway.sv was successful.
+# Compile of Segway_tb.sv failed with 5 errors.
+# Compile of SegwayMath.sv was successful.
+# Compile of SegwayModel.sv was successful with warnings.
+# Compile of SPI_ADC128S.sv was successful.
+# Compile of SPI_mnrch.sv was successful.
+# Compile of steer_en.sv was successful.
+# Compile of steer_en_SM.sv was successful.
+# Compile of UART_rx.sv was successful.
+# Compile of UART_tx.sv was successful.
+# 21 compiles, 1 failed with 5 errors.
+# Compile of Segway_tb.sv failed with 2 errors.
+# Compile of Segway_tb.sv failed with 1 errors.
+# Compile of Segway_tb.sv failed with 1 errors.
+# Compile of Segway_tb.sv failed with 2 errors.
+# Compile of Segway_tb.sv was successful.
+vsim work.Segway_tb -voptargs=+acc
+# vsim work.Segway_tb -voptargs="+acc" 
+# Start time: 15:19:58 on Dec 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Error (suppressible): /filespace/l/lbreyer/ECE551/Segway Design Project/Segway_tb.sv(116): (vopt-7063) Failed to find 'iPhys' in hierarchical name 'iPhys.omega_rght'.
+#         Region: Segway_tb
+# ** Error (suppressible): /filespace/l/lbreyer/ECE551/Segway Design Project/Segway_tb.sv(125): (vopt-7063) Failed to find 'iDut' in hierarchical name 'iDut.iBal.en_steer'.
+#         Region: Segway_tb
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=2, Warnings=0.
+# Error loading design
+# End time: 15:19:59 on Dec 08,2022, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 12
+# Compile of Segway_tb.sv was successful.
+vsim -voptargs=+acc work.Segway_tb
+# vsim -voptargs="+acc" work.Segway_tb 
+# Start time: 15:20:58 on Dec 08,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error (suppressible): /filespace/l/lbreyer/ECE551/Segway Design Project/Segway_tb.sv(125): (vopt-7063) Failed to find 'iDut' in hierarchical name 'iDut.iBal.en_steer'.
+#         Region: Segway_tb
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=0.
+# Error loading design
+# End time: 15:20:58 on Dec 08,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 2
+# Compile of Segway_tb.sv was successful.
+vsim -voptargs=+acc work.Segway_tb
+# vsim -voptargs="+acc" work.Segway_tb 
+# Start time: 15:21:37 on Dec 08,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error (suppressible): /filespace/l/lbreyer/ECE551/Segway Design Project/Segway_tb.sv(125): (vopt-7063) Failed to find 'iBal' in hierarchical name 'iDUT.iBal.en_steer'.
+#         Region: Segway_tb
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=0.
+# Error loading design
+# End time: 15:21:38 on Dec 08,2022, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 2
+# Compile of Segway_tb.sv was successful.
+vsim -voptargs=+acc work.Segway_tb
+# vsim -voptargs="+acc" work.Segway_tb 
+# Start time: 15:22:03 on Dec 08,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 1 FSM in module "SegwayModel(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "piezo_drv(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "inert_intf(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "SPI_mnrch(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "A2D_intf(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "SPI_ADC128S(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "Auth_blk(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "steer_en_SM(fast)".
+# Loading sv_std.std
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+add wave -position insertpoint  \
+sim:/Segway_tb/rider_lean
+add wave -position insertpoint  \
+sim:/Segway_tb/iPHYS/theta_platform
+add wave -position insertpoint  \
+sim:/Segway_tb/iDUT/ptch
+add wave -position insertpoint  \
+sim:/Segway_tb/iDUT/pwr_up
+run -all
+# ** Note: $stop    : /filespace/l/lbreyer/ECE551/Segway Design Project/Segway_tb.sv(102)
+#    Time: 64002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at /filespace/l/lbreyer/ECE551/Segway Design Project/Segway_tb.sv line 102
+# Compile of Segway_tb.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# ** Note: $stop    : /filespace/l/lbreyer/ECE551/Segway Design Project/Segway_tb.sv(102)
+#    Time: 64002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at /filespace/l/lbreyer/ECE551/Segway Design Project/Segway_tb.sv line 102
+run -continue
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 64002030 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 64002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+# Compile of Segway_tb.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# ** Note: $stop    : /filespace/l/lbreyer/ECE551/Segway Design Project/Segway_tb.sv(102)
+#    Time: 64002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at /filespace/l/lbreyer/ECE551/Segway Design Project/Segway_tb.sv line 102
+run -continue
+# 1
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 64002030 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 64002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+# Compile of Segway_tb.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# 1
+# 2
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 202030 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 202030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+# Compile of Segway_tb.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# 1
+# 2
+# 3
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 96002030 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 96002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+# Compile of Segway_tb.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# 1
+# 2
+# 3
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 216002030 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 216002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+add wave -position insertpoint  \
+sim:/Segway_tb/iPHYS/rotation_platform
+add wave -position insertpoint  \
+sim:/Segway_tb/iPHYS/theta_platform
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# 1
+# 2
+# 3
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 216002030 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 216002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+add wave -position insertpoint  \
+sim:/Segway_tb/iPHYS/omega_platform
+add wave -position insertpoint  \
+sim:/Segway_tb/iPHYS/omega_lft
+add wave -position insertpoint  \
+sim:/Segway_tb/iPHYS/omega_rght
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# 1
+# 2
+# 3
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 216002030 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 216002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+# Compile of Segway_tb.sv failed with 1 errors.
+# Compile of Segway_tb.sv was successful.
+# Compile of Segway_tb.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# 1
+# 2
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 16000050 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 16000050 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+# Compile of Segway_tb.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# 1
+# 2
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 160000050 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 160000050 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+# Compile of Segway_tb.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# 1
+# 2
+# 3
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 96002030 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 96002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+# Compile of Segway_tb.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# 1
+# 2
+# 3
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 96002030 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 96002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+# Compile of Segway_tb.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# 1
+# 2
+# 3
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 96002030 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 96002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+add wave -position insertpoint  \
+sim:/Segway_tb/iPHYS/torque_lft \
+sim:/Segway_tb/iPHYS/torque_rght
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# 1
+# 2
+# 3
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 96002030 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 96002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+# Compile of A2D_intf.sv was successful.
+# Compile of ADC128S_FC.sv was successful.
+# Compile of Auth_blk.sv was successful with warnings.
+# Compile of balance_cntrl.sv was successful with warnings.
+# Compile of inert_intf.sv was successful.
+# Compile of inertial_integrator.sv was successful.
+# Compile of mtr_drv.sv was successful.
+# Compile of PID.sv was successful.
+# Compile of piezo_drv.sv was successful with warnings.
+# Compile of PWM11.sv was successful.
+# Compile of rst_synch.sv was successful.
+# Compile of Segway.sv was successful.
+# Compile of Segway_tb.sv was successful.
+# Compile of SegwayMath.sv was successful.
+# Compile of SegwayModel.sv was successful with warnings.
+# Compile of SPI_ADC128S.sv was successful.
+# Compile of SPI_mnrch.sv was successful.
+# Compile of steer_en.sv was successful.
+# Compile of steer_en_SM.sv was successful.
+# Compile of UART_rx.sv was successful.
+# Compile of UART_tx.sv was successful.
+# 21 compiles, 0 failed with no errors.
+run
+# 4
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 96002030 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 96002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# 1
+# 2
+# 3
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 96002030 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 96002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+# Compile of Segway_tb.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# 1
+# 2
+# 3
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 96002030 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 96002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+add wave -position insertpoint  \
+sim:/Segway_tb/PWM1_rght \
+sim:/Segway_tb/PWM2_rght \
+sim:/Segway_tb/PWM1_lft \
+sim:/Segway_tb/PWM2_lft
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# 1
+# 2
+# 3
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 96002030 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 96002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+add wave -position insertpoint sim:/Segway_tb/iDUT/iBAL/*
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# 1
+# 2
+# 3
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 96002030 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 96002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# 1
+# 2
+# 3
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 96002030 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 96002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+# Compile of A2D_intf.sv was successful.
+# Compile of ADC128S_FC.sv was successful.
+# Compile of Auth_blk.sv was successful with warnings.
+# Compile of balance_cntrl.sv was successful with warnings.
+# Compile of inert_intf.sv was successful.
+# Compile of inertial_integrator.sv was successful.
+# Compile of mtr_drv.sv was successful.
+# Compile of PID.sv was successful.
+# Compile of piezo_drv.sv was successful with warnings.
+# Compile of PWM11.sv was successful.
+# Compile of rst_synch.sv was successful.
+# Compile of Segway.sv was successful.
+# Compile of Segway_tb.sv was successful.
+# Compile of SegwayMath.sv was successful.
+# Compile of SegwayModel.sv was successful with warnings.
+# Compile of SPI_ADC128S.sv was successful.
+# Compile of SPI_mnrch.sv was successful.
+# Compile of steer_en.sv was successful.
+# Compile of steer_en_SM.sv was successful.
+# Compile of UART_rx.sv was successful.
+# Compile of UART_tx.sv was successful.
+# 21 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# 1
+# 2
+# 3
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 96002030 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 96002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+add wave -position insertpoint sim:/Segway_tb/iDUT/iBAL/iSMATH/*
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# 1
+# 2
+# 3
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 96002030 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 96002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+# Compile of Segway_tb.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# 1
+# 2
+# 3
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 96002030 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 96002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+add wave -position insertpoint sim:/Segway_tb/iDUT/iSTR/iSM/*
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# 1
+# 2
+# 3
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 96002030 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 96002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+add wave -position insertpoint sim:/Segway_tb/iDUT/iSTR/*
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# 1
+# 2
+# 3
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 96002030 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 96002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+# Compile of Segway_tb.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# 1
+# 2
+# 3
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 456002030 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 456002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+# Compile of steer_en.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# 1
+# 2
+# 3
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 456002030 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 456002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+# Compile of A2D_intf.sv was successful.
+# Compile of ADC128S_FC.sv was successful.
+# Compile of Auth_blk.sv was successful with warnings.
+# Compile of balance_cntrl.sv was successful with warnings.
+# Compile of inert_intf.sv was successful.
+# Compile of inertial_integrator.sv was successful.
+# Compile of mtr_drv.sv was successful.
+# Compile of PID.sv was successful.
+# Compile of piezo_drv.sv was successful with warnings.
+# Compile of PWM11.sv was successful.
+# Compile of rst_synch.sv was successful.
+# Compile of Segway.sv was successful.
+# Compile of Segway_tb.sv was successful.
+# Compile of SegwayMath.sv was successful.
+# Compile of SegwayModel.sv was successful with warnings.
+# Compile of SPI_ADC128S.sv was successful.
+# Compile of SPI_mnrch.sv was successful.
+# Compile of steer_en.sv was successful.
+# Compile of steer_en_SM.sv was successful.
+# Compile of UART_rx.sv was successful.
+# Compile of UART_tx.sv was successful.
+# 21 compiles, 0 failed with no errors.
+quit -sim
+# End time: 16:34:21 on Dec 08,2022, Elapsed time: 1:12:18
+# Errors: 1, Warnings: 4
+vsim -voptargs=+acc work.Segway_tb
+# vsim -voptargs="+acc" work.Segway_tb 
+# Start time: 16:34:28 on Dec 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+add wave -position insertpoint sim:/Segway_tb/iDUT/iSTR/*
+add wave -position insertpoint sim:/Segway_tb/iDUT/iSTR/iSM/*
+run -all
+# 1
+# 2
+# 3
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 456002030 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 456002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+# Compile of Segway_tb.sv was successful.
+# Compile of steer_en.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# 1
+# 2
+# 3
+# ** Error (suppressible): (vsim-12023) Cannot execute undefined system task/function '$$display'
+#    Time: 96002030 ns  Iteration: 1  Process: /Segway_tb/#INITIAL#54 File: tb_tasks.sv Line: 37
+# ** Note: $stop    : tb_tasks.sv(38)
+#    Time: 96002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Task check_value at tb_tasks.sv line 38
+# Compile of Segway.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "piezo_drv(fast)".
+# ** Note: (vopt-143) Recognized 1 FSM in module "inert_intf(fast)".
+# Loading sv_std.std
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# 1
+# 2
+# 3
+# 4
+# 5
+# 6
+add wave -position insertpoint  \
+sim:/Segway_tb/iPHYS/rider_lean
+add wave -position insertpoint  \
+sim:/Segway_tb/iPHYS/rotation_platform \
+sim:/Segway_tb/iPHYS/omega_platform \
+sim:/Segway_tb/iPHYS/theta_platform
+add wave -position insertpoint  \
+sim:/Segway_tb/iPHYS/omega_lft \
+sim:/Segway_tb/iPHYS/omega_rght
+add wave -position insertpoint  \
+sim:/Segway_tb/iPHYS/torque_lft \
+sim:/Segway_tb/iPHYS/torque_rght
+run -all
+# Compile of Segway_tb.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# Loading work.shift_ff(fast)
+# Loading work.done_ff(fast)
+# Loading work.bd_cnt(fast)
+# Loading work.shft_cnt(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+run -all
+# 1
+# 2
+# 3
+# 4
+# 5
+# 6
+# ** Note: $stop    : /filespace/l/lbreyer/ECE551/Segway Design Project/Segway_tb.sv(142)
+#    Time: 176002050 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at /filespace/l/lbreyer/ECE551/Segway Design Project/Segway_tb.sv line 142
+quit -sim
+# End time: 16:43:13 on Dec 08,2022, Elapsed time: 0:08:45
+# Errors: 0, Warnings: 3
+# Compile of UART_tx.sv failed with 3 errors.
+# Compile of UART_tx.sv was successful.
+# Compile of UART_rx.sv failed with 4 errors.
+# Compile of UART_rx.sv was successful.
+# Compile of SegwayMath.sv failed with 1 errors.
+# Compile of SegwayMath.sv failed with 1 errors.
+# Compile of SegwayMath.sv was successful.
+# Compile of SegwayMath.sv was successful.
+# Compile of SegwayMath.sv was successful.
+# Compile of Segway_tb.sv was successful.
+vsim -voptargs=+acc work.Segway_tb
+# vsim -voptargs="+acc" work.Segway_tb 
+# Start time: 17:02:34 on Dec 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "Auth_blk(fast)".
+# Loading sv_std.std
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.rx_shift_ff(fast)
+# Loading work.rdy_ff(fast)
+# Loading work.baud_cnt(fast)
+# Loading work.rx_shft_cnt(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# ** Error (suppressible): (vsim-3839) Variable '/Segway_tb/iDUT/iAuth/iUARTrx/rdy', driven via a port connection, is multiply driven. See /filespace/l/lbreyer/ECE551/Segway Design Project/UART_rx.sv(16).
+#    Time: 0 ns  Iteration: 0  Instance: /Segway_tb/iDUT/iAuth/iUARTrx File: /filespace/l/lbreyer/ECE551/Segway Design Project/UART_rx.sv Line: 68
+# ** Error (suppressible): (vsim-3839) Variable '/Segway_tb/iDUT/iAuth/iUARTrx/rdy', driven via a port connection, is multiply driven. See /filespace/l/lbreyer/ECE551/Segway Design Project/UART_rx.sv(16).
+#    Time: 0 ns  Iteration: 0  Instance: /Segway_tb/iDUT/iAuth/iUARTrx File: /filespace/l/lbreyer/ECE551/Segway Design Project/UART_rx.sv Line: 66
+# ** Error (suppressible): (vsim-3839) Variable '/Segway_tb/iDUT/iAuth/iUARTrx/rdy', driven via a port connection, is multiply driven. See /filespace/l/lbreyer/ECE551/Segway Design Project/UART_rx.sv(16).
+#    Time: 0 ns  Iteration: 0  Instance: /Segway_tb/iDUT/iAuth/iUARTrx File: /filespace/l/lbreyer/ECE551/Segway Design Project/UART_rx.sv Line: 64
+# ** Error (suppressible): (vsim-3839) Variable '/Segway_tb/iDUT/iAuth/iUARTrx/rdy', driven via a port connection, is multiply driven. See /filespace/l/lbreyer/ECE551/Segway Design Project/UART_rx.sv(16).
+#    Time: 0 ns  Iteration: 0  Instance: /Segway_tb/iDUT/iAuth/iUARTrx File: /filespace/l/lbreyer/ECE551/Segway Design Project/UART_rx.sv Line: 62
+# ** Error (suppressible): (vsim-3839) Variable '/Segway_tb/iDUT/iAuth/iUARTrx/rx_shft_reg', driven via a port connection, is multiply driven. See /filespace/l/lbreyer/ECE551/Segway Design Project/UART_rx.sv(15).
+#    Time: 0 ns  Iteration: 0  Instance: /Segway_tb/iDUT/iAuth/iUARTrx File: /filespace/l/lbreyer/ECE551/Segway Design Project/UART_rx.sv Line: 57
+# ** Error (suppressible): (vsim-3839) Variable '/Segway_tb/iDUT/iAuth/iUARTrx/bit_cnt', driven via a port connection, is multiply driven. See /filespace/l/lbreyer/ECE551/Segway Design Project/UART_rx.sv(18).
+#    Time: 0 ns  Iteration: 0  Instance: /Segway_tb/iDUT/iAuth/iUARTrx File: /filespace/l/lbreyer/ECE551/Segway Design Project/UART_rx.sv Line: 52
+# ** Error (suppressible): (vsim-3839) Variable '/Segway_tb/iDUT/iAuth/iUARTrx/bit_cnt', driven via a port connection, is multiply driven. See /filespace/l/lbreyer/ECE551/Segway Design Project/UART_rx.sv(18).
+#    Time: 0 ns  Iteration: 0  Instance: /Segway_tb/iDUT/iAuth/iUARTrx File: /filespace/l/lbreyer/ECE551/Segway Design Project/UART_rx.sv Line: 50
+# ** Error (suppressible): (vsim-3839) Variable '/Segway_tb/iDUT/iAuth/iUARTrx/baud_cnt', driven via a port connection, is multiply driven. See /filespace/l/lbreyer/ECE551/Segway Design Project/UART_rx.sv(17).
+#    Time: 0 ns  Iteration: 0  Instance: /Segway_tb/iDUT/iAuth/iUARTrx File: /filespace/l/lbreyer/ECE551/Segway Design Project/UART_rx.sv Line: 45
+# ** Error (suppressible): (vsim-3839) Variable '/Segway_tb/iDUT/iAuth/iUARTrx/baud_cnt', driven via a port connection, is multiply driven. See /filespace/l/lbreyer/ECE551/Segway Design Project/UART_rx.sv(17).
+#    Time: 0 ns  Iteration: 0  Instance: /Segway_tb/iDUT/iAuth/iUARTrx File: /filespace/l/lbreyer/ECE551/Segway Design Project/UART_rx.sv Line: 43
+# ** Error (suppressible): (vsim-3839) Variable '/Segway_tb/iDUT/iAuth/iUARTrx/baud_cnt', driven via a port connection, is multiply driven. See /filespace/l/lbreyer/ECE551/Segway Design Project/UART_rx.sv(17).
+#    Time: 0 ns  Iteration: 0  Instance: /Segway_tb/iDUT/iAuth/iUARTrx File: /filespace/l/lbreyer/ECE551/Segway Design Project/UART_rx.sv Line: 41
+# Error loading design
+# End time: 17:02:34 on Dec 08,2022, Elapsed time: 0:00:00
+# Errors: 10, Warnings: 11
+# Compile of UART_rx.sv was successful.
+vsim -voptargs=+acc work.Segway_tb
+# vsim -voptargs="+acc" work.Segway_tb 
+# Start time: 17:03:28 on Dec 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.sr_ff(fast)
+# Loading work.iq_cnt(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+add wave -position insertpoint  \
+sim:/Segway_tb/iPHYS/theta_platform
+add wave -position insertpoint  \
+sim:/Segway_tb/iDUT/pwr_up
+add wave -position insertpoint  \
+sim:/Segway_tb/iDUT/ptch
+add wave -position insertpoint  \
+sim:/Segway_tb/rider_lean
+run -all
+# ** Note: $stop    : /filespace/l/lbreyer/ECE551/Segway Design Project/Segway_tb.sv(102)
+#    Time: 64002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at /filespace/l/lbreyer/ECE551/Segway Design Project/Segway_tb.sv line 102
+quit -sim
+# End time: 17:04:35 on Dec 08,2022, Elapsed time: 0:01:07
+# Errors: 0, Warnings: 4
+# Compile of SegwayMath.sv was successful.
+# Compile of SPI_mnrch.sv was successful.
+# Compile of PID.sv was successful.
+# Compile of piezo_drv.sv was successful with warnings.
+# Compile of PWM11.sv failed with 3 errors.
+# Compile of PWM11.sv was successful.
+vsim -voptargs=+acc work.Segway_tb
+# vsim -voptargs="+acc" work.Segway_tb 
+# Start time: 17:17:16 on Dec 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "SPI_mnrch(fast)".
+# Loading sv_std.std
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.asynch_rst_ff(fast)
+# Loading work.UART_tx(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+quit -sim
+# End time: 17:17:34 on Dec 08,2022, Elapsed time: 0:00:18
+# Errors: 0, Warnings: 9
+# Compile of rst_synch.sv failed with 2 errors.
+# Compile of rst_synch.sv was successful.
+vsim -voptargs=+acc work.Segway_tb
+# vsim -voptargs="+acc" work.Segway_tb 
+# Start time: 17:20:11 on Dec 08,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Segway_tb(fast)
+# Loading work.SegwayModel(fast)
+# Loading work.ADC128S_FC(fast)
+# Loading work.SPI_ADC128S(fast)
+# Loading work.Segway(fast)
+# Loading work.Auth_blk_sv_unit(fast)
+# Loading work.Auth_blk(fast)
+# Loading work.UART_rx(fast)
+# Loading work.inert_intf(fast)
+# Loading work.SPI_mnrch(fast)
+# Loading work.inertial_integrator(fast)
+# Loading work.balance_cntrl_sv_unit(fast)
+# Loading work.balance_cntrl(fast)
+# Loading work.PID(fast)
+# Loading work.SegwayMath(fast)
+# Loading work.steer_en(fast)
+# Loading work.steer_en_SM(fast)
+# Loading work.mtr_drv(fast)
+# Loading work.PWM11(fast)
+# Loading work.A2D_intf(fast)
+# Loading work.piezo_drv(fast)
+# Loading work.rst_synch(fast)
+# Loading work.UART_tx(fast)
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_value File: tb_tasks.sv Line: 37
+# ** Warning: (vsim-PLI-3003) [TOFD] - System task or function '$$display' is not defined.
+#    Time: 0 ns  Iteration: 0  Region: /Segway_tb/check_theta_platorm File: tb_tasks.sv Line: 45
+add wave -position insertpoint  \
+sim:/Segway_tb/rider_lean
+add wave -position insertpoint  \
+sim:/Segway_tb/iPHYS/theta_platform
+add wave -position insertpoint  \
+sim:/Segway_tb/iDUT/ptch
+add wave -position insertpoint  \
+sim:/Segway_tb/iDUT/pwr_up
+run -all
+# ** Note: $stop    : /filespace/l/lbreyer/ECE551/Segway Design Project/Segway_tb.sv(102)
+#    Time: 64002030 ns  Iteration: 1  Instance: /Segway_tb
+# Break in Module Segway_tb at /filespace/l/lbreyer/ECE551/Segway Design Project/Segway_tb.sv line 102

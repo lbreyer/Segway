@@ -11,7 +11,7 @@ task Initialize;
   rider_lean = 16'h0000;
   ld_cell_lft = 12'h000;
   ld_cell_rght = 12'h000;
-  steerPot = 12'h000;
+  steerPot = 12'h800;
   batt = 12'h000;
   OVR_I_lft = 0; 
   OVR_I_rght = 0;

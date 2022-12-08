@@ -9,7 +9,7 @@ output logic [15:0] rd_data;
 logic ld_SCLKl, smpl, shft, MISO_smpl, init, done15, ld_SCLK, set_done;
 logic [1:0] state, nxt_state;
 logic [3:0] SCLK_div, bit_cntr;
-logic [15:0] shft_reg;
+//logic [15:0] shft_reg;
 
 typedef enum reg [1:0] { IDLE, F_PORCH, ACTIVE, B_PORCH} state_t;
 
@@ -30,12 +30,12 @@ always_ff @(posedge clk)
 
 always_ff @(posedge clk)
   if (init)
-    shft_reg <= wt_data;
+    rd_data <= wt_data;
   else if (shft)
-    shft_reg <= {shft_reg[14:0],MISO_smpl}; // If shift in next bit
+    rd_data <= {rd_data[14:0],MISO_smpl}; // If shift in next bit
 
-assign rd_data = shft_reg;
-assign MOSI = shft_reg[15];
+//assign rd_data = shft_reg;
+assign MOSI = rd_data[15];
 
 // Bit counter
 always_ff @(posedge clk)

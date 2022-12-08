@@ -3,7 +3,7 @@ module UART_tx(clk, rst_n, TX, trmt, tx_data, tx_done);
 input clk, rst_n, trmt;
 input [7:0] tx_data;
 
-output reg TX, tx_done;
+output TX, tx_done;
 
 logic shift, init, trans, set_done, state, nxt_state;
 logic [3:0] bit_cnt;

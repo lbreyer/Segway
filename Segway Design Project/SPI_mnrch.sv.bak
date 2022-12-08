@@ -30,9 +30,9 @@ always_ff @(posedge clk)
 
 always_ff @(posedge clk)
   if (init)
-    shft_reg <= wt_data;
+    rd_data <= wt_data;
   else if (shft)
-    shft_reg <= {shft_reg[14:0],MISO_smpl}; // If shift in next bit
+    rd_data <= {rd_data[14:0],MISO_smpl}; // If shift in next bit
 
 assign rd_data = shft_reg;
 assign MOSI = shft_reg[15];
@@ -65,7 +65,7 @@ always_ff @(posedge clk, negedge rst_n)
   end
   //else if (set_done) begin
   //  done <= 1'b1;
-  else
+  else begin
     done <= set_done;
   end
  

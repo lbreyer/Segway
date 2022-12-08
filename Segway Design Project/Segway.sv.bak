@@ -65,7 +65,8 @@ module Segway(clk,RST_n,INERT_SS_n,INERT_MOSI,INERT_SCLK,
   // Instantiate steering enable //
   ////////////////////////////////				 
   steer_en #(fast_sim) iSTR(.clk(clk),.rst_n(rst_n),.lft_ld(lft_ld),
-                            .rght_ld(rght_ld), .en_steer(en_steer),.rider_off(rider_off));
+                            .rght_ld(rght_ld),
+							.en_steer(en_steer),.rider_off(rider_off));
 
   
   //////////////////////////////

@@ -12,10 +12,10 @@ logic [12:0] baud_cnt;
 
 typedef enum reg { IDLE, ACTIVE} state_t;
 
-//rx_shift_ff iFFR1(.clk(clk), .RX_meta(RX_meta), .shift(shift), .rx_shft_reg(rx_shft_reg));
-//rdy_ff iFFR2(.clk(clk), .set_rdy(set_rdy), .start(start), .clr_rdy(clr_rdy), .rst_n(rst_n), .rdy(rdy));
-//baud_cnt iCNTR1(.clk(clk), .start(start), .shift(shift), .receiving(receiving), .baud_cnt(baud_cnt));
-//rx_shft_cnt iCNTR2(.clk(clk), .start(start), .shift(shift), .bit_cnt(bit_cnt));
+rx_shift_ff iFFR1(.clk(clk), .RX_meta(RX_meta), .shift(shift), .rx_shft_reg(rx_shft_reg));
+rdy_ff iFFR2(.clk(clk), .set_rdy(set_rdy), .start(start), .clr_rdy(clr_rdy), .rst_n(rst_n), .rdy(rdy));
+baud_cnt iCNTR1(.clk(clk), .start(start), .shift(shift), .receiving(receiving), .baud_cnt(baud_cnt));
+rx_shft_cnt iCNTR2(.clk(clk), .start(start), .shift(shift), .bit_cnt(bit_cnt));
 
 
 // Shifter Logic
