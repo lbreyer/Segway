@@ -1,16 +1,16 @@
-module SegwayMath(PID_cntrl, ss_tmr, steer_pot, en_steer, pwr_up, lft_spd, rght_spd, too_fast);
+module SegwayMath(clk, rst_n, PID_cntrl, ss_tmr, steer_pot, en_steer, pwr_up, lft_spd, rght_spd, too_fast);
 
 input signed [11:0] PID_cntrl;
 input [11:0] steer_pot;
 input [7:0] ss_tmr;
-input en_steer, pwr_up;
+input clk, rst_n, en_steer, pwr_up;
 
 output signed [11:0] lft_spd, rght_spd;
-output too_fast;
+output reg too_fast;
 
 logic signed [19:0] ss_temp;
 logic signed [11:0] PID_ss, steer_temp;
-logic signed [12:0] lft_torque, rght_torque, PID_ss_ext, 
+logic signed [12:0] lft_torque, rght_torque, lft_torque_t, rght_torque_t, PID_ss_ext, 
 			lft_shaped, rght_shaped;
 
 // Scaling with soft start
@@ -27,8 +27,8 @@ assign PID_ss_ext = {PID_ss[11],PID_ss};
 //assign lft_torq_temp = PID_ss_ext + {{4{steer_temp[11]}}, steer_temp[11:4]} + {{3{steer_temp[11]}}, steer_temp[11:3]};
 //assign rght_torq_temp = PID_ss_ext - {{4{steer_temp[11]}}, steer_temp[11:4]} + {{3{steer_temp[11]}}, steer_temp[11:3]};
 
-assign lft_torque = en_steer ? PID_ss_ext + {{4{steer_temp[11]}}, steer_temp[11:4]} + {{3{steer_temp[11]}}, steer_temp[11:3]} : PID_ss_ext;
-assign rght_torque = en_steer ? PID_ss_ext - {{4{steer_temp[11]}}, steer_temp[11:4]} + {{3{steer_temp[11]}}, steer_temp[11:3]} : PID_ss_ext;
+assign lft_torque_t = en_steer ? PID_ss_ext + {{4{steer_temp[11]}}, steer_temp[11:4]} + {{3{steer_temp[11]}}, steer_temp[11:3]} : PID_ss_ext;
+assign rght_torque_t = en_steer ? PID_ss_ext - {{4{steer_temp[11]}}, steer_temp[11:4]} + {{3{steer_temp[11]}}, steer_temp[11:3]} : PID_ss_ext;
 
 // Deadzone shaping (left)
 //assign lft_torq_low = lft_torque - 13'h3C0;
@@ -37,6 +37,18 @@ assign rght_torque = en_steer ? PID_ss_ext - {{4{steer_temp[11]}}, steer_temp[11
 
 //assign lft_mult = lft_torque * $signed(6'h10);
 //assign lft_shaped_low = (lft_torque[12] & lft_torque < -8'h3C) || (~lft_torque[12] & lft_torque > 8'h3C) ? lft_torque[12] ? lft_torque - 13'h3C0: lft_torque + 13'h3C0 : lft_torque * $signed(6'h10);
+
+always_ff @(posedge clk or negedge rst_n)
+  if (!rst_n)
+    lft_torque <= 13'h0000;
+  else
+    lft_torque <= lft_torque_t;
+
+always_ff @(posedge clk or negedge rst_n)
+  if (!rst_n)
+    rght_torque <= 13'h0000;
+  else
+    rght_torque <= rght_torque_t;
 
 assign lft_shaped = pwr_up ? (lft_torque[12] & lft_torque < -8'h3C) || (~lft_torque[12] & lft_torque > 8'h3C) ? lft_torque[12] ? lft_torque - 13'h3C0: lft_torque + 13'h3C0 : lft_torque * $signed(6'h10) : 13'h0000;
 

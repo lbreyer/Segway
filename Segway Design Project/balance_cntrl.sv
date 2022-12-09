@@ -5,16 +5,17 @@ input [11:0] steer_pot;
 input [15:0] ptch, ptch_rt;
 
 output [11:0] lft_spd, rght_spd;
-output too_fast;
+output reg too_fast;
 
-reg [7:0] ss_tmr;
-reg [11:0] PID_cntrl;
-//wire [15:0] ptch_f, ptch_rt_f;
+reg [7:0] ss_tmr, ss_tmr_t;
+reg [11:0] PID_cntrl, PID_cntrl_t;
+reg [15:0] ptch_t, ptch_rt_t;
+reg too_fast_t;
 
 // PID and Segway math component block
-PID iPID (.clk(clk), .rst_n(rst_n), .vld(vld), .ptch(ptch), .ptch_rt(ptch_rt), 
-	.pwr_up(pwr_up), .rider_off(rider_off), .PID_cntrl(PID_cntrl), .ss_tmr(ss_tmr));
-SegwayMath iSMATH(.PID_cntrl(PID_cntrl), .ss_tmr(ss_tmr), .steer_pot(steer_pot), .en_steer(en_steer), .pwr_up(pwr_up), .lft_spd(lft_spd), .rght_spd(rght_spd), .too_fast(too_fast));
+PID iPID (.clk(clk), .rst_n(rst_n), .vld(vld), .ptch(ptch), .ptch_rt(ptch_rt_t), 
+	.pwr_up(pwr_up), .rider_off(rider_off), .PID_cntrl(PID_cntrl_t), .ss_tmr(ss_tmr_t));
+SegwayMath iSMATH(.clk(clk), .rst_n(rst_n), .PID_cntrl(PID_cntrl), .ss_tmr(ss_tmr), .steer_pot(steer_pot), .en_steer(en_steer), .pwr_up(pwr_up), .lft_spd(lft_spd), .rght_spd(rght_spd), .too_fast(too_fast_t));
 
 /*always_ff @(negedge clk, negedge rst_n)
   if (!rst_n)
@@ -30,5 +31,29 @@ always_ff @(negedge clk, negedge rst_n)
 
 //assign ptch_f = rst_n ? ptch : 16'h0000;
 //assign ptch_rt_f = rst_n ? ptch_rt : 16'h0000;
+
+always_ff @(posedge clk or negedge rst_n)
+  if (!rst_n)
+    ptch_rt_t <= 16'h0000;
+  else
+    ptch_rt_t <= ptch_rt;
+
+always_ff @(posedge clk or negedge rst_n)
+  if (!rst_n)
+    too_fast <= 1'b0;
+  else
+    too_fast <= too_fast_t;
+
+always_ff @(posedge clk or negedge rst_n)
+  if (!rst_n)
+    ss_tmr <= 8'h00;
+  else
+    ss_tmr <= ss_tmr_t;
+
+always_ff @(posedge clk or negedge rst_n)
+  if (!rst_n)
+    PID_cntrl <= 16'h0000;
+  else
+    PID_cntrl <= PID_cntrl_t;
 
 endmodule;
