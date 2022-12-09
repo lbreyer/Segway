@@ -13,10 +13,12 @@ logic sum_lt_min, sum_gt_min, diff_gt_1_4, diff_gt_15_16, tmr_full, clr_tmr, tes
 localparam [9:0] MIN_RIDER_WT = 10'h200;
 localparam [6:0] WT_HYSTERESIS = 7'h40;
 
+//instantiate SM
 steer_en_SM iSM(.clk(clk), .rst_n(rst_n), .tmr_full(tmr_full), .sum_gt_min(sum_gt_min), 
 		.sum_lt_min(sum_lt_min), .diff_gt_1_4(diff_gt_1_4), .diff_gt_15_16(diff_gt_15_16), 
 		.clr_tmr(clr_tmr), .en_steer(en_steer), .rider_off(rider_off));
 
+//compute necessary maths
 assign sum = lft_ld + rght_ld;
 assign diff = lft_ld - rght_ld;
 
@@ -27,6 +29,7 @@ assign diff_abs = diff[11] ? -diff : diff;
 assign diff_gt_1_4 = diff_abs > sum[12:2];
 assign diff_gt_15_16 = diff_abs > (sum - sum[12:4]);
 
+//assign timer based on fastsim
 assign tmr_full = fast_sim ? |cnt[25:14] : cnt >= 26'h3FE56C0;
 
 assign test = fast_sim;

@@ -80,6 +80,7 @@ initial begin
   repeat(1600000) @(posedge clk);
     rider_lean = 16'h0000;
   repeat(800000) @(posedge clk);
+  */
   //Rewrote with the use of tasks
   //Test for PID
   Initialize;
@@ -139,16 +140,9 @@ initial begin
   check_value(0, iDUT.pwr_up, "pwr_up", "RIDER ON");
 
   $stop();
-*/
 
-  RIDER_LEAN;
-  RIDER_ON;
-  LEFT_RIGHT;
-  RIDER_OFF;
-  MTR_DRIVE_TEST;
-  $stop();
 end
-  `include "tb_tests.sv"
+  `include "tb_tasks.sv"
 
 always
   #10 clk = ~clk;

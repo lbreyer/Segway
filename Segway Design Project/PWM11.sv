@@ -16,6 +16,7 @@ logic [10:0] cnt;
 assign PWM_synch = &cnt; // Synch signal, tests for max value
 assign OVR_I_blank_n = cnt > 255; // Blanking signal
 
+//flipflop for PWM signal
 always_ff @(posedge clk, negedge rst_n)
   if (!rst_n)
     PWM_sig <= 1'b0; // asynch reset
@@ -24,6 +25,7 @@ always_ff @(posedge clk, negedge rst_n)
   else if (~|cnt)
     PWM_sig <= 1'b1; // S signal asserted
 
+//cnt increment
 always_ff @(posedge clk or negedge rst_n)
   if (!rst_n)
     cnt <= 8'h00;

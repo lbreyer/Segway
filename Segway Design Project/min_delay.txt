@@ -8,15 +8,15 @@ Report : timing
         -max_paths 3
 Design : Segway
 Version: T-2022.03-SP3
-Date   : Fri Dec  9 14:05:52 2022
+Date   : Fri Dec  9 17:16:39 2022
 ****************************************
 
 Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
 Wire Load Model Mode: enclosed
 
-  Startpoint: iDRV/iPWM_rght/cnt_reg[0]
+  Startpoint: iBUZZ/prd_cntr_reg[6]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: iDRV/iPWM_rght/cnt_reg[0]
+  Endpoint: iBUZZ/prd_cntr_reg[6]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: min
@@ -29,27 +29,28 @@ Wire Load Model Mode: enclosed
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  iDRV/iPWM_rght/cnt_reg[0]/CLK (DFFARX1_LVT)             0.00       0.00 r
-  iDRV/iPWM_rght/cnt_reg[0]/QN (DFFARX1_LVT)              0.06       0.06 f
-  iDRV/iPWM_rght/cnt_reg[0]/D (DFFARX1_LVT)               0.01       0.07 f
-  data arrival time                                                  0.07
+  iBUZZ/prd_cntr_reg[6]/CLK (DFFX1_LVT)                   0.00       0.00 r
+  iBUZZ/prd_cntr_reg[6]/QN (DFFX1_LVT)                    0.06       0.06 f
+  U1186/Y (AND2X1_LVT)                                    0.05       0.11 f
+  iBUZZ/prd_cntr_reg[6]/D (DFFX1_LVT)                     0.01       0.12 f
+  data arrival time                                                  0.12
 
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   clock uncertainty                                       0.12       0.12
-  iDRV/iPWM_rght/cnt_reg[0]/CLK (DFFARX1_LVT)             0.00       0.12 r
-  library hold time                                      -0.02       0.11
-  data required time                                                 0.11
+  iBUZZ/prd_cntr_reg[6]/CLK (DFFX1_LVT)                   0.00       0.12 r
+  library hold time                                      -0.01       0.12
+  data required time                                                 0.12
   --------------------------------------------------------------------------
-  data required time                                                 0.11
-  data arrival time                                                 -0.07
+  data required time                                                 0.12
+  data arrival time                                                 -0.12
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.04
+  slack (MET)                                                        0.00
 
 
-  Startpoint: iDRV/iPWM_lft/cnt_reg[0]
+  Startpoint: iAuth/iUARTrx/baud_cnt_reg[12]
               (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: iDRV/iPWM_lft/cnt_reg[0]
+  Endpoint: iAuth/iUARTrx/baud_cnt_reg[12]
             (rising edge-triggered flip-flop clocked by clk)
   Path Group: clk
   Path Type: min
@@ -62,22 +63,23 @@ Wire Load Model Mode: enclosed
   --------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  iDRV/iPWM_lft/cnt_reg[0]/CLK (DFFARX1_LVT)              0.00       0.00 r
-  iDRV/iPWM_lft/cnt_reg[0]/QN (DFFARX1_LVT)               0.06       0.06 f
-  iDRV/iPWM_lft/cnt_reg[0]/D (DFFARX1_LVT)                0.01       0.07 f
-  data arrival time                                                  0.07
+  iAuth/iUARTrx/baud_cnt_reg[12]/CLK (DFFX1_LVT)          0.00       0.00 r
+  iAuth/iUARTrx/baud_cnt_reg[12]/Q (DFFX1_LVT)            0.07       0.07 r
+  U1779/Y (OA21X1_LVT)                                    0.04       0.11 r
+  iAuth/iUARTrx/baud_cnt_reg[12]/D (DFFX1_LVT)            0.01       0.12 r
+  data arrival time                                                  0.12
 
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
   clock uncertainty                                       0.12       0.12
-  iDRV/iPWM_lft/cnt_reg[0]/CLK (DFFARX1_LVT)              0.00       0.12 r
-  library hold time                                      -0.02       0.11
-  data required time                                                 0.11
+  iAuth/iUARTrx/baud_cnt_reg[12]/CLK (DFFX1_LVT)          0.00       0.12 r
+  library hold time                                      -0.01       0.12
+  data required time                                                 0.12
   --------------------------------------------------------------------------
-  data required time                                                 0.11
-  data arrival time                                                 -0.07
+  data required time                                                 0.12
+  data arrival time                                                 -0.12
   --------------------------------------------------------------------------
-  slack (VIOLATED)                                                  -0.04
+  slack (MET)                                                        0.00
 
 
   Startpoint: iRST/temp_reg/CLK
@@ -98,20 +100,22 @@ Wire Load Model Mode: enclosed
   input external delay                     0.00       1.25 f
   iRST/temp_reg/CLK (DFFNARX1_LVT)         0.00       1.25 f
   iRST/temp_reg/Q (DFFNARX1_LVT)           0.08       1.33 r
-  iRST/rst_n_reg/D (DFFNARX1_LVT)          0.01       1.34 r
-  data arrival time                                   1.34
+  U1967/Y (INVX0_LVT)                      0.02       1.35 f
+  U1968/Y (INVX0_LVT)                      0.02       1.37 r
+  iRST/rst_n_reg/D (DFFNARX1_LVT)          0.01       1.38 r
+  data arrival time                                   1.38
 
   clock clk (fall edge)                    1.25       1.25
   clock network delay (ideal)              0.00       1.25
   clock uncertainty                        0.12       1.38
   iRST/rst_n_reg/CLK (DFFNARX1_LVT)        0.00       1.38 f
-  library hold time                        0.00       1.37
-  data required time                                  1.37
+  library hold time                        0.00       1.38
+  data required time                                  1.38
   -----------------------------------------------------------
-  data required time                                  1.37
-  data arrival time                                  -1.34
+  data required time                                  1.38
+  data arrival time                                  -1.38
   -----------------------------------------------------------
-  slack (VIOLATED)                                   -0.03
+  slack (MET)                                         0.00
 
 
 1

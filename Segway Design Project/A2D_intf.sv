@@ -54,19 +54,19 @@ always_ff @(posedge clk or negedge rst_n)
   else if (update & (rr_cntr == 2'b10))
     steer_pot <= rd_data[11:0];
 
-// batt
+// state machine area stuff for a2d
 always_ff @(posedge clk or negedge rst_n)
   if (!rst_n)
     batt <= 12'h000;
   else if (update & (rr_cntr == 2'b11))
     batt <= rd_data[11:0];
-
+// beginning of SM
 always_comb begin
   nxt_state = state;
   wrt = 1'b0;
   cnt = 1'b0;
   update = 1'b0;
-
+  
   case (state)
     IDLE: begin
           if (nxt) begin
@@ -82,7 +82,7 @@ always_comb begin
  	     else nxt_state = SPI1;
             end
     DEAD: begin
-            if (SCLK) begin
+            if (SCLK) begin //wait for SCLK to transition
 	      wrt = 1'b1;
 	      nxt_state = SPI2;
 	    end

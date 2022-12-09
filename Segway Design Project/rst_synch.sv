@@ -14,6 +14,7 @@ always_ff @(negedge clk, negedge RST_n)
   else
     temp <= 1'b1;    // hold value
 
+//double flopped for metastability
 always_ff @(negedge clk, negedge RST_n)
   if (!RST_n)
     rst_n <= 1'b0; // asynch reset

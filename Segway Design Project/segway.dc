@@ -33,10 +33,12 @@ set_max_transition 0.10 [current_design]
 set_wire_load_model -name 16000 -library saed32lvt_tt0p85v25c
 
 # Compiles, then flattens the design so it has no hierarchy, and compiles again.
-compile -map_effort low
+compile -map_effort medium
 
 # sets the clock uncertainty to 0.125ns
 set_clock_uncertainty 0.125 clk
+
+set_fix_hold clk;
 
 #setting the multicycle path setups
 set_multicycle_path 2 -setup -from [find pin iNEMO/ptch_*_reg*/CLK]
@@ -51,10 +53,10 @@ ungroup -all -flatten
 compile -map_effort medium
 
 # Produces a min_delay report
-report_timing -path full -delay min -nworst 3
+report_timing -path full -delay min -nworst 3 > min_delay.txt
 
 # Produces a max_delay report
-report_timing -path full -delay max -nworst 3
+report_timing -path full -delay max -nworst 3 > max_delay.txt
 
 # Produces an area report
 report_area > area.txt

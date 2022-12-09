@@ -1,0 +1,79 @@
+/////////////////////////////////////////////////////////////
+// Created by: Synopsys DC Expert(TM) in wire load mode
+// Version   : T-2022.03-SP3
+// Date      : Fri Dec  9 17:16:39 2022
+/////////////////////////////////////////////////////////////
+
+
+module balance_cntrl ( clk, rst_n, vld, ptch, ptch_rt, pwr_up, rider_off, 
+        steer_pot, en_steer, lft_spd, rght_spd, too_fast );
+  input [15:0] ptch;
+  input [15:0] ptch_rt;
+  input [11:0] steer_pot;
+  output [11:0] lft_spd;
+  output [11:0] rght_spd;
+  input clk, rst_n, vld, pwr_up, rider_off, en_steer;
+  output too_fast;
+  wire   N0;
+  wire   [11:0] PID_cntrl_t;
+  wire   [7:0] ss_tmr;
+  wire   [11:0] PID_cntrl;
+
+  PID iPID ( .clk(clk), .rst_n(rst_n), .vld(vld), .ptch(ptch), .ptch_rt(
+        ptch_rt), .pwr_up(pwr_up), .rider_off(rider_off), .PID_cntrl(
+        PID_cntrl_t), .ss_tmr(ss_tmr) );
+  SegwayMath iSMATH ( .clk(clk), .rst_n(rst_n), .PID_cntrl(PID_cntrl), 
+        .ss_tmr(ss_tmr), .steer_pot(steer_pot), .en_steer(en_steer), .pwr_up(
+        pwr_up), .lft_spd(lft_spd), .rght_spd(rght_spd), .too_fast(too_fast)
+         );
+  \**SEQGEN**  \PID_cntrl_reg[11]  ( .clear(N0), .preset(1'b0), .next_state(
+        PID_cntrl_t[11]), .clocked_on(clk), .data_in(1'b0), .enable(1'b0), .Q(
+        PID_cntrl[11]), .synch_clear(1'b0), .synch_preset(1'b0), 
+        .synch_toggle(1'b0), .synch_enable(1'b1) );
+  \**SEQGEN**  \PID_cntrl_reg[10]  ( .clear(N0), .preset(1'b0), .next_state(
+        PID_cntrl_t[10]), .clocked_on(clk), .data_in(1'b0), .enable(1'b0), .Q(
+        PID_cntrl[10]), .synch_clear(1'b0), .synch_preset(1'b0), 
+        .synch_toggle(1'b0), .synch_enable(1'b1) );
+  \**SEQGEN**  \PID_cntrl_reg[9]  ( .clear(N0), .preset(1'b0), .next_state(
+        PID_cntrl_t[9]), .clocked_on(clk), .data_in(1'b0), .enable(1'b0), .Q(
+        PID_cntrl[9]), .synch_clear(1'b0), .synch_preset(1'b0), .synch_toggle(
+        1'b0), .synch_enable(1'b1) );
+  \**SEQGEN**  \PID_cntrl_reg[8]  ( .clear(N0), .preset(1'b0), .next_state(
+        PID_cntrl_t[8]), .clocked_on(clk), .data_in(1'b0), .enable(1'b0), .Q(
+        PID_cntrl[8]), .synch_clear(1'b0), .synch_preset(1'b0), .synch_toggle(
+        1'b0), .synch_enable(1'b1) );
+  \**SEQGEN**  \PID_cntrl_reg[7]  ( .clear(N0), .preset(1'b0), .next_state(
+        PID_cntrl_t[7]), .clocked_on(clk), .data_in(1'b0), .enable(1'b0), .Q(
+        PID_cntrl[7]), .synch_clear(1'b0), .synch_preset(1'b0), .synch_toggle(
+        1'b0), .synch_enable(1'b1) );
+  \**SEQGEN**  \PID_cntrl_reg[6]  ( .clear(N0), .preset(1'b0), .next_state(
+        PID_cntrl_t[6]), .clocked_on(clk), .data_in(1'b0), .enable(1'b0), .Q(
+        PID_cntrl[6]), .synch_clear(1'b0), .synch_preset(1'b0), .synch_toggle(
+        1'b0), .synch_enable(1'b1) );
+  \**SEQGEN**  \PID_cntrl_reg[5]  ( .clear(N0), .preset(1'b0), .next_state(
+        PID_cntrl_t[5]), .clocked_on(clk), .data_in(1'b0), .enable(1'b0), .Q(
+        PID_cntrl[5]), .synch_clear(1'b0), .synch_preset(1'b0), .synch_toggle(
+        1'b0), .synch_enable(1'b1) );
+  \**SEQGEN**  \PID_cntrl_reg[4]  ( .clear(N0), .preset(1'b0), .next_state(
+        PID_cntrl_t[4]), .clocked_on(clk), .data_in(1'b0), .enable(1'b0), .Q(
+        PID_cntrl[4]), .synch_clear(1'b0), .synch_preset(1'b0), .synch_toggle(
+        1'b0), .synch_enable(1'b1) );
+  \**SEQGEN**  \PID_cntrl_reg[3]  ( .clear(N0), .preset(1'b0), .next_state(
+        PID_cntrl_t[3]), .clocked_on(clk), .data_in(1'b0), .enable(1'b0), .Q(
+        PID_cntrl[3]), .synch_clear(1'b0), .synch_preset(1'b0), .synch_toggle(
+        1'b0), .synch_enable(1'b1) );
+  \**SEQGEN**  \PID_cntrl_reg[2]  ( .clear(N0), .preset(1'b0), .next_state(
+        PID_cntrl_t[2]), .clocked_on(clk), .data_in(1'b0), .enable(1'b0), .Q(
+        PID_cntrl[2]), .synch_clear(1'b0), .synch_preset(1'b0), .synch_toggle(
+        1'b0), .synch_enable(1'b1) );
+  \**SEQGEN**  \PID_cntrl_reg[1]  ( .clear(N0), .preset(1'b0), .next_state(
+        PID_cntrl_t[1]), .clocked_on(clk), .data_in(1'b0), .enable(1'b0), .Q(
+        PID_cntrl[1]), .synch_clear(1'b0), .synch_preset(1'b0), .synch_toggle(
+        1'b0), .synch_enable(1'b1) );
+  \**SEQGEN**  \PID_cntrl_reg[0]  ( .clear(N0), .preset(1'b0), .next_state(
+        PID_cntrl_t[0]), .clocked_on(clk), .data_in(1'b0), .enable(1'b0), .Q(
+        PID_cntrl[0]), .synch_clear(1'b0), .synch_preset(1'b0), .synch_toggle(
+        1'b0), .synch_enable(1'b1) );
+  GTECH_NOT I_0 ( .A(rst_n), .Z(N0) );
+endmodule
+

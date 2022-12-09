@@ -26,6 +26,7 @@ localparam G7_prd = 15'h3E48;
 localparam G7_1_dur = 24'hBFFFFF;
 localparam G7_2_dur = 25'h1FFFFFF;
 
+//generate incrementer
 generate if (fast_sim) begin
         assign increment = 7'h40;
    end else begin
@@ -71,7 +72,7 @@ always_ff @(posedge clk or negedge rst_n)
     state <= nxt_state;
 
 always_comb begin
-  nxt_state = state;
+  nxt_state = state; //default outputs
   piezo = 1'b0;
   piezo_n = 1'b1;
   init = 1'b0;
@@ -79,22 +80,22 @@ always_comb begin
   curr_dur = 1'b0;
 
   case (state)
-    IDLE: begin
+    IDLE: begin 
 	  curr_prd = 1'b0;
 	  curr_dur = 1'b0;
- 	  if (too_fast) begin
+ 	  if (too_fast) begin //start first three notes repeated
 	    init = 1'b1;
 	    curr_prd = G6_prd;
 	    curr_dur = G6_dur;
 	    nxt_state = G6;
 	  end
-          else if (batt_low & rpt) begin
+          else if (batt_low & rpt) begin //start backwards sound for warning
 	    init = 1'b1;
 	    curr_prd = G7_prd;
 	    curr_dur = G7_2_dur;
             nxt_state = G7_2;
           end
-	  else if (en_steer & rpt) begin
+	  else if (en_steer & rpt) begin // play charge fanfare
 	    init = 1'b1;
 	    curr_prd = G6_prd;
 	    curr_dur = G6_dur;
@@ -103,20 +104,20 @@ always_comb begin
           else nxt_state = IDLE;
         end
     G6: begin // G6 STATE 1
-	curr_prd = G6_prd;
+	curr_prd = G6_prd; //comments for all states here
 	curr_dur = G6_dur;
-	piezo = prd_cntr < curr_prd / 2;
-	piezo_n = ~piezo;
-        if (batt_low & dur_cntr >= curr_dur) begin
+	piezo = prd_cntr < curr_prd / 2; //set piezo based off where in period prd_cnt stands
+	piezo_n = ~piezo; //set piezo_n to the opposite
+        if (batt_low & dur_cntr >= curr_dur) begin //if dur_cnt is done and in batt_low mode set to idle
           nxt_state = IDLE;
         end
-	else if (dur_cntr >= curr_dur) begin
+	else if (dur_cntr >= curr_dur) begin //if cnt is done go to next note
 	  init = 1'b1;
 	  curr_prd = C7_prd;
 	  curr_dur = C7_dur;
 	  nxt_state = C7;
         end
- 	else nxt_state = G6;
+ 	else nxt_state = G6; //stay in this note
        end
     C7: begin // C7 STATE 2
 	curr_prd = C7_prd;
