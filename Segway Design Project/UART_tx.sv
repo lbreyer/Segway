@@ -26,13 +26,11 @@ assign shift = baud_cnt == 12'hA2C;
 assign cnt_rst = init | shift;
 
 // Shift Counter
-always_ff @(posedge clk, negedge rst_n)
-  if (!rst_n)
-    shft_reg <= 9'h1FF; // asynch reset
-  else if (init)
-    shft_reg <= data; // value init
-  else if (shift) 
-    shft_reg <= {1'b1, shft_reg[8:1]};    // conditionally enabled
+always_ff @(posedge clk)
+  if (init)
+    bit_cnt <= 4'h0; // Init to zeros
+  else if (shift)
+    bit_cnt <= bit_cnt + 1; // combinational increment of cnt
 
 // Baud Counter
 always_ff @(posedge clk)
@@ -69,6 +67,9 @@ always_ff @(posedge clk, negedge rst_n)
 // Comb state logic
 always_comb begin
   nxt_state = IDLE;
+  set_done = 1'b0;
+  init = 1'b0;
+  trans = 1'b0;
   set_done = 1'b0;
   
   case (state)

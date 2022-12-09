@@ -8,13 +8,13 @@ logic temp;
 //asynch_rst_ff iFF1(.d(1'b1), .clk(clk), .rst_n(RST_n), .q(temp));
 //asynch_rst_ff iFF2(.d(temp), .clk(clk), .rst_n(RST_n), .q(rst_n));
 
-always_ff @(negedge clk, negedge rst_n)
+always_ff @(negedge clk, negedge RST_n)
   if (!RST_n)
     temp <= 1'b0; // asynch reset
   else
     temp <= 1'b1;    // hold value
 
-always_ff @(negedge clk, negedge rst_n)
+always_ff @(negedge clk, negedge RST_n)
   if (!RST_n)
     rst_n <= 1'b0; // asynch reset
   else

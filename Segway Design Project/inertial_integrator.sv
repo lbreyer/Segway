@@ -31,7 +31,8 @@ assign ptch_acc = {{3{ptch_acc_product[25]}},ptch_acc_product[25:13]}; // pitch 
 
 //flop flop for setting fusion ptch offset
 always_ff @(posedge clk, negedge rst_n) begin
-if (ptch_acc > ptch) // if pitch calculated from accel > pitch calculated from gyro
+if(!rst_n) fusion_ptch_offset <= 0;
+else if (ptch_acc > ptch) // if pitch calculated from accel > pitch calculated from gyro
 	fusion_ptch_offset <= +1024;
 else
 	fusion_ptch_offset <= -1024;
