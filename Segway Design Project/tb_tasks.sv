@@ -1,7 +1,6 @@
 /*
 *This file contains all the tasks/functions used in the Segway Project.
 */
-
 //This task intalize the tests.
 task Initialize;
   clk = 0;
@@ -28,19 +27,10 @@ task SendCmd(input byte command);
 	@(posedge clk);
 	@(negedge clk);
 	send_cmd = 0;
-
 endtask
 
 //Task used to check values based on the actual value, expected value and the name of what the value is getting compared to.
 task check_value(integer expected, integer actual, string signal_name, string test_name);
-	if(actual !== expected) begin
-		$$display("Error - Test Name: %s, Signal Name: %s, Actual Value: %h, Expected Value: %h", test_name, signal_name, actual, expected);
-		$stop();
-	end
-endtask
-
-//Task to check the theta of the platform(need to ask hoffman if I should make it a range or exact value).
-task check_theta_platorm(integer expected, integer actual, string signal_name, string test_name);
 	if(actual !== expected) begin
 		$$display("Error - Test Name: %s, Signal Name: %s, Actual Value: %h, Expected Value: %h", test_name, signal_name, actual, expected);
 		$stop();
