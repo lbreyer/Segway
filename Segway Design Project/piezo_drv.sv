@@ -14,17 +14,17 @@ logic [27:0] rpt_cntr;
 logic [2:0] state, nxt_state;
 typedef enum reg [2:0] { IDLE, G6, C7, E7_1, G7_1, E7_2, G7_2} state_t;
 
-localparam [27:0] repeat_const = 28'h8F0D180;
-localparam [14:0] G6_prd = 15'h7C90;
-localparam [22:0] G6_dur = 23'h7FFFFF;
-localparam [14:0] C7_prd = 15'h5D51;
-localparam [22:0] C7_dur = 23'h7FFFFF;
-localparam [14:0] E7_prd = 15'h4A11;
-localparam [22:0] E7_1_dur = 23'h7FFFFF;
-localparam [22:0] E7_2_dur = 23'h3FFFFF;
-localparam [14:0] G7_prd = 15'h3E48;
-localparam [23:0] G7_1_dur = 24'hBFFFFF;
-localparam [24:0] G7_2_dur = 25'h1FFFFFF;
+localparam repeat_const = 28'h8F0D180;
+localparam G6_prd = 15'h7C90;
+localparam G6_dur = 23'h7FFFFF;
+localparam C7_prd = 15'h5D51;
+localparam C7_dur = 23'h7FFFFF;
+localparam E7_prd = 15'h4A11;
+localparam E7_1_dur = 23'h7FFFFF;
+localparam E7_2_dur = 23'h3FFFFF;
+localparam G7_prd = 15'h3E48;
+localparam G7_1_dur = 24'hBFFFFF;
+localparam G7_2_dur = 25'h1FFFFFF;
 
 generate if (fast_sim) begin
         assign increment = 7'h40;

@@ -81,6 +81,7 @@ always_comb begin
           else nxt_state = IDLE;
     ACTIVE: begin
           init = 1'b0;
+	  trans = 1'b1;
           if (bit_cnt == 4'hA) begin
             trans = 1'b0;
             set_done = 1'b1;
@@ -97,47 +98,34 @@ endmodule
 
 // Baud Counter
 /*module bd_cnt(clk, cnt_rst, trans, cnt);
-
 input clk, cnt_rst, trans;
-
 output [11:0] cnt;
-
 reg [11:0] cnt;
-
 always_ff @(posedge clk)
   if (cnt_rst)
     cnt <= 12'h000; // cnt reset
   else if (trans)
     cnt <= cnt + 1; // combinational increment of cnt
-
 endmodule*/
 
 
 // Shift Counter
 /*module shft_cnt(clk, init, shift, bit_cnt);
-
 input clk, init, shift;
-
 output reg [3:0] bit_cnt;
-
-
 always_ff @(posedge clk)
   if (init)
     bit_cnt <= 4'h0; // Init to zeros
   else if (shift)
     bit_cnt <= bit_cnt + 1; // combinational increment of cnt
-
 endmodule*/
 
 
 // Shifter Flip Flop
 /*module shift_ff(data, clk, rst_n, init, shift, shft_reg);
-
 input [8:0] data;
 input clk, init, shift, rst_n;
-
 output reg [8:0] shft_reg;
-
 always_ff @(posedge clk, negedge rst_n)
   if (!rst_n)
     shft_reg <= 9'h1FF; // asynch reset
@@ -145,16 +133,13 @@ always_ff @(posedge clk, negedge rst_n)
     shft_reg <= data; // value init
   else if (shift) 
     shft_reg <= {1'b1, shft_reg[8:1]};    // conditionally enabled
-
 endmodule*/
 
 
 // Done SR Flip Flop
 /*module done_ff(clk, set_done, init, rst_n, tx_done);
-
 input clk, set_done, init, rst_n;
 output reg tx_done;
-
 always_ff @(posedge clk, negedge rst_n)
   if (!rst_n)
     tx_done <= 1'b0; // asynch reset
@@ -162,5 +147,4 @@ always_ff @(posedge clk, negedge rst_n)
     tx_done <= 1'b0; // R reset signal asserted
   else if (set_done)
     tx_done <= 1'b1; // S signal asserted
-
 endmodule  */

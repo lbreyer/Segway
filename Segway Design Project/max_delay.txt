@@ -1,0 +1,299 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 3
+        -max_paths 3
+Design : Segway
+Version: T-2022.03-SP3
+Date   : Fri Dec  9 14:05:52 2022
+****************************************
+
+Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: iNEMO/iINT/ptch_int_reg[22]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: iBUZZ/dur_cntr_reg[8]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  Segway             16000                 saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  iNEMO/iINT/ptch_int_reg[22]/CLK (DFFARX1_LVT)           0.00       0.00 r
+  iNEMO/iINT/ptch_int_reg[22]/QN (DFFARX1_LVT)            0.07       0.07 r
+  U3354/Y (AND3X1_LVT)                                    0.05       0.12 r
+  U3494/Y (NAND4X0_LVT)                                   0.04       0.15 f
+  U2306/Y (NAND2X0_LVT)                                   0.07       0.22 r
+  U2950/Y (AND2X1_LVT)                                    0.06       0.28 r
+  U2501/Y (AO21X1_LVT)                                    0.07       0.35 r
+  U2646/Y (INVX0_LVT)                                     0.03       0.37 f
+  U3630/Y (AO221X1_LVT)                                   0.07       0.44 f
+  U3631/Y (NAND2X0_LVT)                                   0.05       0.49 r
+  U2707/Y (XOR3X2_LVT)                                    0.06       0.56 f
+  U2401/Y (INVX1_LVT)                                     0.04       0.60 r
+  U2616/Y (AND2X1_LVT)                                    0.05       0.66 r
+  U2456/Y (AO22X1_LVT)                                    0.06       0.71 r
+  U2780/Y (XNOR2X1_LVT)                                   0.09       0.80 r
+  U2949/Y (OR2X1_LVT)                                     0.05       0.85 r
+  U3749/Y (NAND2X0_LVT)                                   0.03       0.88 f
+  U2649/Y (OA21X1_LVT)                                    0.05       0.93 f
+  U3755/Y (AO21X1_LVT)                                    0.04       0.97 f
+  U3762/Y (NAND2X0_LVT)                                   0.04       1.02 r
+  U3767/Y (XOR2X2_LVT)                                    0.08       1.10 f
+  U2701/Y (INVX0_LVT)                                     0.04       1.14 r
+  U3779/Y (NAND4X0_LVT)                                   0.04       1.18 f
+  U2473/Y (AND2X2_LVT)                                    0.06       1.24 f
+  U2708/Y (AO21X2_LVT)                                    0.06       1.31 f
+  U3962/Y (NAND2X0_LVT)                                   0.06       1.37 r
+  U2530/Y (XOR2X2_LVT)                                    0.07       1.44 r
+  U3963/Y (AO22X1_LVT)                                    0.06       1.50 r
+  U2574/Y (INVX0_LVT)                                     0.03       1.53 f
+  U3964/Y (NAND2X0_LVT)                                   0.04       1.56 r
+  U3965/Y (AO22X1_LVT)                                    0.05       1.61 r
+  U2551/Y (OR2X1_LVT)                                     0.04       1.66 r
+  U3966/Y (AO22X1_LVT)                                    0.05       1.71 r
+  U2311/Y (OR2X1_LVT)                                     0.05       1.76 r
+  U2529/Y (AOI22X1_LVT)                                   0.06       1.81 f
+  U3968/Y (NAND2X0_LVT)                                   0.03       1.85 r
+  U3969/Y (AO22X1_LVT)                                    0.05       1.90 r
+  U2676/Y (OR2X1_LVT)                                     0.05       1.94 r
+  U3970/Y (AO22X1_LVT)                                    0.05       2.00 r
+  U2667/Y (XOR2X2_LVT)                                    0.09       2.08 f
+  U2762/Y (XOR3X2_LVT)                                    0.11       2.19 r
+  U4043/Y (NAND2X0_LVT)                                   0.04       2.24 f
+  U2437/Y (AND3X1_LVT)                                    0.06       2.30 f
+  U4072/Y (NAND2X0_LVT)                                   0.04       2.34 r
+  U2409/Y (AND3X1_LVT)                                    0.05       2.38 r
+  U2408/Y (MUX21X2_LVT)                                   0.08       2.47 f
+  U3359/Y (AOI21X1_LVT)                                   0.08       2.55 r
+  U2572/Y (NAND2X0_LVT)                                   0.03       2.58 f
+  U4304/Y (NAND2X0_LVT)                                   0.04       2.62 r
+  U4321/Y (AO21X1_LVT)                                    0.06       2.68 r
+  U4323/Y (NAND2X0_LVT)                                   0.04       2.72 f
+  U4334/Y (NAND2X0_LVT)                                   0.05       2.77 r
+  U4335/Y (NAND4X0_LVT)                                   0.05       2.82 f
+  U2601/Y (AND2X1_LVT)                                    0.07       2.88 f
+  U4363/Y (NAND2X0_LVT)                                   0.04       2.92 r
+  U2632/Y (AO21X1_LVT)                                    0.06       2.98 r
+  U4378/Y (NAND2X0_LVT)                                   0.03       3.01 f
+  U2286/Y (NAND3X2_LVT)                                   0.07       3.09 r
+  U4386/Y (NAND2X0_LVT)                                   0.03       3.11 f
+  U2784/Y (AND2X1_LVT)                                    0.05       3.16 f
+  U4404/Y (NAND4X0_LVT)                                   0.04       3.20 r
+  U4405/Y (AND2X1_LVT)                                    0.04       3.24 r
+  U4406/Y (NAND4X0_LVT)                                   0.04       3.28 f
+  U4407/Y (NAND2X0_LVT)                                   0.04       3.32 r
+  iBUZZ/dur_cntr_reg[8]/D (DFFX1_LVT)                     0.01       3.33 r
+  data arrival time                                                  3.33
+
+  clock clk (rise edge)                                   2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.12       2.38
+  iBUZZ/dur_cntr_reg[8]/CLK (DFFX1_LVT)                   0.00       2.38 r
+  library setup time                                     -0.03       2.35
+  data required time                                                 2.35
+  --------------------------------------------------------------------------
+  data required time                                                 2.35
+  data arrival time                                                 -3.33
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.99
+
+
+  Startpoint: iNEMO/iINT/ptch_int_reg[22]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: iBUZZ/dur_cntr_reg[8]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  Segway             16000                 saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  iNEMO/iINT/ptch_int_reg[22]/CLK (DFFARX1_LVT)           0.00       0.00 r
+  iNEMO/iINT/ptch_int_reg[22]/QN (DFFARX1_LVT)            0.07       0.07 r
+  U3354/Y (AND3X1_LVT)                                    0.05       0.12 r
+  U3494/Y (NAND4X0_LVT)                                   0.04       0.15 f
+  U2306/Y (NAND2X0_LVT)                                   0.07       0.22 r
+  U2950/Y (AND2X1_LVT)                                    0.06       0.28 r
+  U2501/Y (AO21X1_LVT)                                    0.07       0.35 r
+  U2646/Y (INVX0_LVT)                                     0.03       0.37 f
+  U3630/Y (AO221X1_LVT)                                   0.07       0.44 f
+  U3631/Y (NAND2X0_LVT)                                   0.05       0.49 r
+  U2707/Y (XOR3X2_LVT)                                    0.06       0.56 f
+  U2401/Y (INVX1_LVT)                                     0.04       0.60 r
+  U2616/Y (AND2X1_LVT)                                    0.05       0.66 r
+  U2456/Y (AO22X1_LVT)                                    0.06       0.71 r
+  U2780/Y (XNOR2X1_LVT)                                   0.09       0.80 r
+  U2949/Y (OR2X1_LVT)                                     0.05       0.85 r
+  U3749/Y (NAND2X0_LVT)                                   0.03       0.88 f
+  U2649/Y (OA21X1_LVT)                                    0.05       0.93 f
+  U3755/Y (AO21X1_LVT)                                    0.04       0.97 f
+  U3762/Y (NAND2X0_LVT)                                   0.04       1.02 r
+  U3767/Y (XOR2X2_LVT)                                    0.08       1.10 f
+  U2701/Y (INVX0_LVT)                                     0.04       1.14 r
+  U3779/Y (NAND4X0_LVT)                                   0.04       1.18 f
+  U2473/Y (AND2X2_LVT)                                    0.06       1.24 f
+  U2708/Y (AO21X2_LVT)                                    0.06       1.31 f
+  U3962/Y (NAND2X0_LVT)                                   0.06       1.37 r
+  U2530/Y (XOR2X2_LVT)                                    0.07       1.44 r
+  U3963/Y (AO22X1_LVT)                                    0.06       1.50 r
+  U2574/Y (INVX0_LVT)                                     0.03       1.53 f
+  U3964/Y (NAND2X0_LVT)                                   0.04       1.56 r
+  U3965/Y (AO22X1_LVT)                                    0.05       1.61 r
+  U2551/Y (OR2X1_LVT)                                     0.04       1.66 r
+  U3966/Y (AO22X1_LVT)                                    0.05       1.71 r
+  U2311/Y (OR2X1_LVT)                                     0.05       1.76 r
+  U2529/Y (AOI22X1_LVT)                                   0.06       1.81 f
+  U3968/Y (NAND2X0_LVT)                                   0.03       1.85 r
+  U3969/Y (AO22X1_LVT)                                    0.05       1.90 r
+  U2676/Y (OR2X1_LVT)                                     0.05       1.94 r
+  U3970/Y (AO22X1_LVT)                                    0.05       2.00 r
+  U2667/Y (XOR2X2_LVT)                                    0.09       2.08 f
+  U2762/Y (XOR3X2_LVT)                                    0.11       2.19 r
+  U4043/Y (NAND2X0_LVT)                                   0.04       2.24 f
+  U2437/Y (AND3X1_LVT)                                    0.06       2.30 f
+  U4072/Y (NAND2X0_LVT)                                   0.04       2.34 r
+  U2409/Y (AND3X1_LVT)                                    0.05       2.38 r
+  U2408/Y (MUX21X2_LVT)                                   0.08       2.47 f
+  U3359/Y (AOI21X1_LVT)                                   0.08       2.55 r
+  U4303/Y (NAND2X0_LVT)                                   0.03       2.58 f
+  U3345/Y (AND2X1_LVT)                                    0.05       2.62 f
+  U3347/Y (AOI21X1_LVT)                                   0.07       2.69 r
+  U4354/Y (NAND3X0_LVT)                                   0.04       2.73 f
+  U4355/Y (AND2X1_LVT)                                    0.05       2.78 f
+  U2458/Y (MUX21X2_LVT)                                   0.07       2.85 r
+  U2597/Y (AND2X1_LVT)                                    0.05       2.90 r
+  U4375/Y (NAND3X0_LVT)                                   0.04       2.94 f
+  U4376/Y (NAND2X0_LVT)                                   0.04       2.98 r
+  U4378/Y (NAND2X0_LVT)                                   0.03       3.01 f
+  U2286/Y (NAND3X2_LVT)                                   0.07       3.09 r
+  U4386/Y (NAND2X0_LVT)                                   0.03       3.11 f
+  U2784/Y (AND2X1_LVT)                                    0.05       3.16 f
+  U4404/Y (NAND4X0_LVT)                                   0.04       3.20 r
+  U4405/Y (AND2X1_LVT)                                    0.04       3.24 r
+  U4406/Y (NAND4X0_LVT)                                   0.04       3.28 f
+  U4407/Y (NAND2X0_LVT)                                   0.04       3.32 r
+  iBUZZ/dur_cntr_reg[8]/D (DFFX1_LVT)                     0.01       3.33 r
+  data arrival time                                                  3.33
+
+  clock clk (rise edge)                                   2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.12       2.38
+  iBUZZ/dur_cntr_reg[8]/CLK (DFFX1_LVT)                   0.00       2.38 r
+  library setup time                                     -0.03       2.35
+  data required time                                                 2.35
+  --------------------------------------------------------------------------
+  data required time                                                 2.35
+  data arrival time                                                 -3.33
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.99
+
+
+  Startpoint: iNEMO/iINT/ptch_int_reg[22]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: iBUZZ/dur_cntr_reg[8]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  Segway             16000                 saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  iNEMO/iINT/ptch_int_reg[22]/CLK (DFFARX1_LVT)           0.00       0.00 r
+  iNEMO/iINT/ptch_int_reg[22]/QN (DFFARX1_LVT)            0.07       0.07 r
+  U3354/Y (AND3X1_LVT)                                    0.05       0.12 r
+  U3494/Y (NAND4X0_LVT)                                   0.04       0.15 f
+  U2306/Y (NAND2X0_LVT)                                   0.07       0.22 r
+  U2950/Y (AND2X1_LVT)                                    0.06       0.28 r
+  U2501/Y (AO21X1_LVT)                                    0.07       0.35 r
+  U2646/Y (INVX0_LVT)                                     0.03       0.37 f
+  U3630/Y (AO221X1_LVT)                                   0.07       0.44 f
+  U3631/Y (NAND2X0_LVT)                                   0.05       0.49 r
+  U2707/Y (XOR3X2_LVT)                                    0.06       0.56 f
+  U2401/Y (INVX1_LVT)                                     0.04       0.60 r
+  U2616/Y (AND2X1_LVT)                                    0.05       0.66 r
+  U2456/Y (AO22X1_LVT)                                    0.06       0.71 r
+  U2780/Y (XNOR2X1_LVT)                                   0.09       0.80 r
+  U2949/Y (OR2X1_LVT)                                     0.05       0.85 r
+  U3749/Y (NAND2X0_LVT)                                   0.03       0.88 f
+  U2649/Y (OA21X1_LVT)                                    0.05       0.93 f
+  U3755/Y (AO21X1_LVT)                                    0.04       0.97 f
+  U3762/Y (NAND2X0_LVT)                                   0.04       1.02 r
+  U3767/Y (XOR2X2_LVT)                                    0.08       1.10 f
+  U2701/Y (INVX0_LVT)                                     0.04       1.14 r
+  U3779/Y (NAND4X0_LVT)                                   0.04       1.18 f
+  U2473/Y (AND2X2_LVT)                                    0.06       1.24 f
+  U2605/Y (AO21X1_LVT)                                    0.05       1.29 f
+  U2443/Y (NAND2X0_LVT)                                   0.04       1.33 r
+  U2955/Y (XOR2X2_LVT)                                    0.08       1.42 f
+  U2673/Y (XOR3X2_LVT)                                    0.11       1.52 r
+  U3845/Y (AO22X1_LVT)                                    0.05       1.58 r
+  U2477/Y (OR2X1_LVT)                                     0.05       1.63 r
+  U3847/Y (AO22X1_LVT)                                    0.05       1.68 r
+  U2606/Y (INVX0_LVT)                                     0.02       1.70 f
+  U3849/Y (NAND2X0_LVT)                                   0.03       1.74 r
+  U3850/Y (AO22X1_LVT)                                    0.05       1.79 r
+  U3851/Y (INVX1_LVT)                                     0.03       1.82 f
+  U2873/Y (XNOR3X2_LVT)                                   0.08       1.90 r
+  U2425/Y (XOR3X2_LVT)                                    0.12       2.01 f
+  U2796/Y (XNOR2X2_LVT)                                   0.10       2.11 r
+  U2741/Y (XOR2X2_LVT)                                    0.09       2.20 f
+  U2770/Y (XNOR2X1_LVT)                                   0.09       2.29 r
+  U4145/Y (NAND2X0_LVT)                                   0.03       2.32 f
+  U4146/Y (AO22X1_LVT)                                    0.04       2.36 f
+  U3365/Y (OAI221X2_LVT)                                  0.07       2.43 r
+  U2465/Y (NOR2X0_LVT)                                    0.06       2.49 f
+  U3359/Y (AOI21X1_LVT)                                   0.05       2.55 r
+  U2572/Y (NAND2X0_LVT)                                   0.03       2.58 f
+  U4304/Y (NAND2X0_LVT)                                   0.04       2.62 r
+  U4321/Y (AO21X1_LVT)                                    0.06       2.68 r
+  U4323/Y (NAND2X0_LVT)                                   0.04       2.72 f
+  U4334/Y (NAND2X0_LVT)                                   0.05       2.77 r
+  U4335/Y (NAND4X0_LVT)                                   0.05       2.81 f
+  U2601/Y (AND2X1_LVT)                                    0.07       2.88 f
+  U4363/Y (NAND2X0_LVT)                                   0.04       2.92 r
+  U2632/Y (AO21X1_LVT)                                    0.06       2.98 r
+  U4378/Y (NAND2X0_LVT)                                   0.03       3.01 f
+  U2286/Y (NAND3X2_LVT)                                   0.07       3.08 r
+  U4386/Y (NAND2X0_LVT)                                   0.03       3.11 f
+  U2784/Y (AND2X1_LVT)                                    0.05       3.16 f
+  U4404/Y (NAND4X0_LVT)                                   0.04       3.20 r
+  U4405/Y (AND2X1_LVT)                                    0.04       3.24 r
+  U4406/Y (NAND4X0_LVT)                                   0.04       3.28 f
+  U4407/Y (NAND2X0_LVT)                                   0.04       3.32 r
+  iBUZZ/dur_cntr_reg[8]/D (DFFX1_LVT)                     0.01       3.33 r
+  data arrival time                                                  3.33
+
+  clock clk (rise edge)                                   2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.12       2.38
+  iBUZZ/dur_cntr_reg[8]/CLK (DFFX1_LVT)                   0.00       2.38 r
+  library setup time                                     -0.03       2.35
+  data required time                                                 2.35
+  --------------------------------------------------------------------------
+  data required time                                                 2.35
+  data arrival time                                                 -3.33
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.99
+
+
+1

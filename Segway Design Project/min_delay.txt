@@ -1,0 +1,117 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -nworst 3
+        -max_paths 3
+Design : Segway
+Version: T-2022.03-SP3
+Date   : Fri Dec  9 14:05:52 2022
+****************************************
+
+Operating Conditions: tt0p85v25c   Library: saed32lvt_tt0p85v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: iDRV/iPWM_rght/cnt_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: iDRV/iPWM_rght/cnt_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  Segway             16000                 saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  iDRV/iPWM_rght/cnt_reg[0]/CLK (DFFARX1_LVT)             0.00       0.00 r
+  iDRV/iPWM_rght/cnt_reg[0]/QN (DFFARX1_LVT)              0.06       0.06 f
+  iDRV/iPWM_rght/cnt_reg[0]/D (DFFARX1_LVT)               0.01       0.07 f
+  data arrival time                                                  0.07
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.12       0.12
+  iDRV/iPWM_rght/cnt_reg[0]/CLK (DFFARX1_LVT)             0.00       0.12 r
+  library hold time                                      -0.02       0.11
+  data required time                                                 0.11
+  --------------------------------------------------------------------------
+  data required time                                                 0.11
+  data arrival time                                                 -0.07
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.04
+
+
+  Startpoint: iDRV/iPWM_lft/cnt_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: iDRV/iPWM_lft/cnt_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  Segway             16000                 saed32lvt_tt0p85v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  iDRV/iPWM_lft/cnt_reg[0]/CLK (DFFARX1_LVT)              0.00       0.00 r
+  iDRV/iPWM_lft/cnt_reg[0]/QN (DFFARX1_LVT)               0.06       0.06 f
+  iDRV/iPWM_lft/cnt_reg[0]/D (DFFARX1_LVT)                0.01       0.07 f
+  data arrival time                                                  0.07
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.12       0.12
+  iDRV/iPWM_lft/cnt_reg[0]/CLK (DFFARX1_LVT)              0.00       0.12 r
+  library hold time                                      -0.02       0.11
+  data required time                                                 0.11
+  --------------------------------------------------------------------------
+  data required time                                                 0.11
+  data arrival time                                                 -0.07
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.04
+
+
+  Startpoint: iRST/temp_reg/CLK
+              (internal path startpoint clocked by clk)
+  Endpoint: iRST/rst_n_reg
+            (falling edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  Segway             16000                 saed32lvt_tt0p85v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (fall edge)                    1.25       1.25
+  clock network delay (ideal)              0.00       1.25
+  input external delay                     0.00       1.25 f
+  iRST/temp_reg/CLK (DFFNARX1_LVT)         0.00       1.25 f
+  iRST/temp_reg/Q (DFFNARX1_LVT)           0.08       1.33 r
+  iRST/rst_n_reg/D (DFFNARX1_LVT)          0.01       1.34 r
+  data arrival time                                   1.34
+
+  clock clk (fall edge)                    1.25       1.25
+  clock network delay (ideal)              0.00       1.25
+  clock uncertainty                        0.12       1.38
+  iRST/rst_n_reg/CLK (DFFNARX1_LVT)        0.00       1.38 f
+  library hold time                        0.00       1.37
+  data required time                                  1.37
+  -----------------------------------------------------------
+  data required time                                  1.37
+  data arrival time                                  -1.34
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.03
+
+
+1

@@ -24,14 +24,11 @@ endmodule
 
 
 /*module asynch_rst_ff(d, clk, rst_n, q);
-
 input d, clk, rst_n;
 output reg q;
-
 always_ff @(negedge clk, negedge rst_n)
   if (!rst_n)
     q <= 1'b0; // asynch reset
   else
     q <= d;    // hold value
-
 endmodule*/ 
