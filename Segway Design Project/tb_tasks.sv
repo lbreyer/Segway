@@ -32,7 +32,7 @@ endtask
 //Task used to check values based on the actual value, expected value and the name of what the value is getting compared to.
 task check_value(integer expected, integer actual, string signal_name, string test_name);
 	if(actual !== expected) begin
-		$$display("Error - Test Name: %s, Signal Name: %s, Actual Value: %h, Expected Value: %h", test_name, signal_name, actual, expected);
+		$display("Error - Test Name: %s, Signal Name: %s, Actual Value: %h, Expected Value: %h", test_name, signal_name, actual, expected);
 		$stop();
 	end
 endtask

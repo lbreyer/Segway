@@ -18,8 +18,6 @@ task RIDER_LEAN;
     rider_lean = 16'h0000;
 
     repeat(800000) @(posedge clk);
-
-    $stop();
 endtask
 
 task RIDER_ON;
@@ -27,11 +25,13 @@ task RIDER_ON;
     ld_cell_lft = 12'h200;
     ld_cell_rght = 12'h200;
     batt = 12'hFFF;
-    $display("1");
+    repeat(800000) @(posedge clk);
+
     check_value(0, iDUT.pwr_up, "pwr_up", "RIDER ON");
+
     SendCmd(8'h67);
 
-    repeat(800000) @(posedge clk);
+    repeat(1600000) @(posedge clk);
     $display("2");
     check_value(1, iDUT.pwr_up, "pwr_up", "RIDER ON");
 endtask
@@ -41,7 +41,7 @@ task LEFT_RIGHT;
     ld_cell_lft = 12'h200;
     ld_cell_rght = 12'h200;
     batt = 12'hFFF;
-    repeat(100) @(posedge clk);
+    repeat(800000) @(posedge clk);
     SendCmd(8'h67);
     repeat(800000) @(posedge clk);
     rider_lean = 16'h0FFF;
@@ -50,10 +50,12 @@ task LEFT_RIGHT;
     repeat(2000000) @(posedge clk);
 
     steerPot = 12'h200;
+    repeat(2000000) @(posedge clk);
     $display("3");
     check_value(1, ((iPHYS.omega_rght < iPHYS.omega_lft) || (iPHYS.omega_rght > iPHYS.omega_lft)), "left or right ", "Turning_Left_or_Right");
 
     steerPot = 12'hF00;
+    repeat(2000000) @(posedge clk);
     $display("4");
     check_value(1, ((iPHYS.omega_rght < iPHYS.omega_lft) || (iPHYS.omega_rght > iPHYS.omega_lft)), "left or right", "Turning_Left_or_Right");
 endtask
@@ -62,20 +64,25 @@ task RIDER_OFF;
     Initialize;
     ld_cell_lft = 12'h200;
     ld_cell_rght = 12'h200;
-    SendCmd(8'h67);
+    batt = 12'hFFF;
     repeat(800000) @(posedge clk);
-    check_value(1, iDUT.pwr_up, "pwr_up", "RIDER ON")
+
+    SendCmd(8'h67);
+
+    repeat(1600000) @(posedge clk);
+    check_value(1, iDUT.pwr_up, "pwr_up", "RIDER OFF");
+    repeat(1600000) @(posedge clk);
     ld_cell_lft = 0;
     ld_cell_rght = 0;
     
     repeat(2000000) @(posedge clk);
     $display("5");
     check_value(0, iDUT.iBAL.en_steer, "en_steer", "Rider_OFF");
-
+    repeat(800000) @(posedge clk);
     SendCmd(8'h73);
     repeat(2000000) @(posedge clk);
     $display("6");
-    check_value(0, iDUT.pwr_up, "pwr_up", "RIDER ON");
+    check_value(0, iDUT.pwr_up, "pwr_up", "RIDER OFF");
 endtask
 
 task MTR_DRIVE_TEST;
@@ -122,7 +129,7 @@ Initialize;
     ld_cell_lft = 12'h200;
     ld_cell_rght = 12'h200;
     batt = 12'hFFF;
-    repeat(100) @(posedge clk);
+    repeat(800000) @(posedge clk);
     SendCmd(8'h67);
     repeat(800000) @(posedge clk);
     rider_lean = 16'h0FFF;
