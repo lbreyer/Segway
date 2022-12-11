@@ -136,7 +136,8 @@ Initialize;
     repeat(2000000) @(posedge clk);
     check_value(1, iDUT.pwr_up, "pwr_up", "RIDER ON");
     repeat(2000000) @(posedge clk);
-
+    check_value(1, iDUT.iBAL.en_steer, "en_steer", "Rider_OFF");
+    repeat(2000000) @(posedge clk);
     ld_cell_lft = 12'h200;
     ld_cell_rght = 12'h000;
     repeat(2000000) @(posedge clk);

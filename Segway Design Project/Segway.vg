@@ -4,7 +4,7 @@
 // Date      : Fri Dec  9 17:16:39 2022
 /////////////////////////////////////////////////////////////
 
-
+`timescale 1ns/1ps
 module balance_cntrl ( clk, rst_n, vld, ptch, ptch_rt, pwr_up, rider_off, 
         steer_pot, en_steer, lft_spd, rght_spd, too_fast );
   input [15:0] ptch;

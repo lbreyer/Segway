@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module Segway_tb();
 			
 //// Interconnects to DUT/support defined as type wire /////
@@ -141,12 +142,13 @@ initial begin
   $stop();
 */
 
-  RIDER_LEAN;
-  RIDER_ON;
-  LEFT_RIGHT;
-  RIDER_OFF;
-  MTR_DRIVE_TEST;
+  //RIDER_LEAN;
+  //RIDER_ON;
+  //LEFT_RIGHT;
+  //RIDER_OFF;
+  //MTR_DRIVE_TEST;
   STEPPING_OFF;
+  $display("YAHOOO!!!!");
   $stop();
 end
 `include "tb_tests.sv"
