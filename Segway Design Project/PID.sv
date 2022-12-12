@@ -1,11 +1,12 @@
 module PID #(parameter fast_sim = 1'b1) (clk, rst_n, vld, ptch, ptch_rt, pwr_up, rider_off, PID_cntrl, ss_tmr);
 
-input clk, rst_n, vld, pwr_up, rider_off;
-input signed [15:0] ptch, ptch_rt;
+input clk, rst_n, vld, pwr_up, rider_off; // Clock, active low asynch reset, valid condition, segway power up and rider off signals
+input signed [15:0] ptch, ptch_rt; // The pitch input signals
 
-output reg signed [11:0] PID_cntrl;
-output reg [7:0] ss_tmr;
+output reg signed [11:0] PID_cntrl; // PID control for subcomponents
+output reg [7:0] ss_tmr; // Slow start timer
 
+// Intermediary Signals
 logic signed [15:0] PID_ext;
 logic signed [14:0] P_term, I_term;
 logic signed [12:0] D_term;
@@ -15,8 +16,6 @@ logic signed [17:0] integrator;
 logic signed [17:0] pitch_summed;
 logic ov;
 logic [26:0] full_tmr;
-//logic signed [11:0] PID_cntrl_t;
-//logic [7:0] ss_tmr_t;
 
 logic [8:0] increment;
 
@@ -32,7 +31,6 @@ generate if (fast_sim) begin
 	assign I_term = {{3{integrator[17]}}, integrator[17:6]};
    end endgenerate
 
-
 // I term ff
 always_ff @(posedge clk, negedge rst_n)
   if (!rst_n)
@@ -42,6 +40,7 @@ always_ff @(posedge clk, negedge rst_n)
   else if (vld & ~ov)
     integrator <= integrator + {{8{ptch_err_sat[9]}}, ptch_err_sat}; // Checks valid and overflow then integrates
 
+// full timer ff
 always_ff @(posedge clk, negedge rst_n)
   if (!rst_n)
     full_tmr <= 27'h0000000; // asynch reset
@@ -56,10 +55,10 @@ assign ptch_err_sat = (~ptch[15] & |ptch[14:9]) ? 10'h1FF : (ptch[15] & ~&ptch[1
 assign P_term = ptch_err_sat * $signed(P_COEFF); // Define P term
 
 // SET I TERM
-//assign pitch_err_sat_ext = {{8{ptch_err_sat[9]}}, ptch_err_sat}; // sign extend PES
 assign pitch_summed = integrator + {{8{ptch_err_sat[9]}}, ptch_err_sat};
 assign ov = (~(ptch_err_sat[9] ^ integrator[17]) & (integrator[17] ^ pitch_summed[17])); // Overflow logic
 
+// Define Slow Start timer
 assign ss_tmr = full_tmr[26:19];
 
 // SET D TERM
@@ -68,27 +67,6 @@ assign D_term = ~({{3{ptch_rt[15]}}, ptch_rt[15:6]});
 // SET PID CNTRL
 assign PID_ext = {P_term[14], P_term[14:0]} + {I_term[14], I_term} + {{3{D_term[12]}}, D_term[12:0]};
 assign PID_cntrl = (~PID_ext[15] & |PID_ext[14:11]) ? 12'h7FF : (PID_ext[15] & ~&PID_ext[14:11]) ? 12'h800 : PID_ext[11:0];
-
-//extra flop on PID_cntrl for max delay purposes
-/*always_ff @(posedge clk or negedge rst_n)
-  if (!rst_n)
-    PID_cntrl <= 8'h00;
-  else
-    PID_cntrl <= PID_cntrl_t;*/
-
-//extra flop on ss_tmr for max delay purposes
-/*always_ff @(posedge clk or negedge rst_n)
-  if (!rst_n)
-    ss_tmr <= 16'h0000;
-  else
-    ss_tmr <= ss_tmr_t;*/
-
-//extra flop on ptch_err_sat for max delay purposes
-/*always_ff @(posedge clk or negedge rst_n)
-  if (!rst_n)
-    ptch_err_sat <= 10'h000;
-  else
-    ptch_err_sat <= ptch_err_sat_t;*/
 
 endmodule
 

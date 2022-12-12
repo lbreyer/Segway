@@ -1,14 +1,16 @@
 module Auth_blk(clk, rst_n, RX, rider_off, pwr_up);
 
-input clk, rst_n, RX, rider_off;
-output logic pwr_up;
+input clk, rst_n, RX, rider_off; // Clock, active low asynch reset, RX bit, and rider off of segway signals
+output logic pwr_up; // Signal representing the power state
 
+// Intermediary signals
 logic [7:0] rx_data;
 logic clr_rdy, rdy;
 logic [1:0] state, nxt_state;
 
-localparam g = 8'h67;
-localparam s = 8'h73;
+// Command constants
+localparam g = 8'h67; // GO comand
+localparam s = 8'h73; // STOP command
 
 typedef enum reg [1:0] { IDLE, PWR1, PWR2 } state_t;
 
@@ -30,7 +32,7 @@ always_comb begin
   clr_rdy = 1'b0;
   
   case (state)
-    IDLE: if (rdy & rx_data == g) begin // If power up signal recieved, power up segway
+    IDLE: if (rdy & rx_data == g) begin // If go signal recieved, power up segway
             pwr_up = 1'b1;
             clr_rdy = 1'b1;
             nxt_state = PWR1;

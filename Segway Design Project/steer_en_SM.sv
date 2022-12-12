@@ -32,51 +32,52 @@ module steer_en_SM(clk,rst_n,tmr_full,sum_gt_min,sum_lt_min,diff_gt_1_4,
   
   typedef enum reg [1:0] { IDLE, RIDR_ON, STR_EN } state_t;
 
+  // State FF
   always_ff @(posedge clk or negedge rst_n)
   if (!rst_n)
     state <= IDLE;
   else 
     state <= nxt_state;
   
-
+  // State machine logic
   always_comb begin
     nxt_state = IDLE;
-    en_steer = 1'b0;
+    en_steer = 1'b0; // Default outputs
     rider_off = 1'b0;
     clr_tmr = 1'b0;
   
     case (state)
       IDLE: begin
             rider_off = 1'b1;
-            if (sum_gt_min) begin
+            if (sum_gt_min) begin // Wait for sufficient weight on the pads for a rider to be on
               clr_tmr = 1'b1;
               nxt_state = RIDR_ON;
             end
-            else nxt_state = IDLE;
+            else nxt_state = IDLE; // Wait for a rider to step on
            end
       RIDR_ON: begin
             rider_off = 1'b0; 
-            if (~sum_gt_min) begin
+            if (~sum_gt_min) begin // If the rider steps off, return to idle
               nxt_state = IDLE;
             end
-            else if (diff_gt_1_4) begin
+            else if (diff_gt_1_4) begin // If the rider is unbalanced, wait and do not enable steering
               clr_tmr = 1'b1;
               nxt_state = RIDR_ON;
             end
-            else if (tmr_full) begin
+            else if (tmr_full) begin // If rider is on and balanced, enable steering
               nxt_state = STR_EN;
             end
-            else begin
+            else begin // Wait for a rider
               clr_tmr = 1'b0;
               nxt_state = RIDR_ON;
             end
           end
      STR_EN: begin
             en_steer = 1'b1;
-            if (sum_lt_min) begin
+            if (sum_lt_min) begin // If rider falls off, stop steering
               nxt_state = IDLE;
             end
-            else if (diff_gt_15_16) begin
+            else if (diff_gt_15_16) begin // If rider is stepping off disable steering
               clr_tmr = 1'b1;
               nxt_state = RIDR_ON;
             end

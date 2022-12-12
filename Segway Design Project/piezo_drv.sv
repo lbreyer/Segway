@@ -5,6 +5,7 @@ parameter fast_sim = 1'b1;
 input clk, rst_n, en_steer, too_fast, batt_low;
 output logic piezo, piezo_n;
 
+// Intermediary Signals
 logic init, rpt;
 logic [6:0] increment;
 logic [14:0] prd_cntr, curr_prd;
@@ -14,6 +15,7 @@ logic [27:0] rpt_cntr;
 logic [2:0] state, nxt_state;
 typedef enum reg [2:0] { IDLE, G6, C7, E7_1, G7_1, E7_2, G7_2} state_t;
 
+// Note localparams
 localparam repeat_const = 28'h8F0D180;
 localparam G6_prd = 15'h7C90;
 localparam G6_dur = 23'h7FFFFF;
@@ -26,19 +28,19 @@ localparam G7_prd = 15'h3E48;
 localparam G7_1_dur = 24'hBFFFFF;
 localparam G7_2_dur = 25'h1FFFFFF;
 
-//generate incrementer
+//generate incrementer based on fast sim
 generate if (fast_sim) begin
         assign increment = 7'h40;
    end else begin
         assign increment = 7'h001;
    end endgenerate
 
-assign rpt = rpt_cntr >= repeat_const;
+assign rpt = rpt_cntr >= repeat_const; // Check repeat condition
 
 // Durration counter
 always_ff @(posedge clk)
   if (!rst_n)
-    dur_cntr <= 26'h0000000; // Init counter
+    dur_cntr <= 26'h0000000; // rst counter
   else if (init)
     dur_cntr <= 26'h0000000; // Init counter
   else
@@ -47,7 +49,7 @@ always_ff @(posedge clk)
 // Repeat Timer
 always_ff @(posedge clk)
   if (!rst_n)
-    rpt_cntr <= 28'h0000000; // Init counter
+    rpt_cntr <= 28'h0000000; // rst counter
   else if (rpt)
     rpt_cntr <= 28'h0000000; // Init counter
   else
@@ -56,7 +58,7 @@ always_ff @(posedge clk)
 // Period Timer
 always_ff @(posedge clk)
   if (!rst_n)
-    prd_cntr <= 15'h0000; // Init counter
+    prd_cntr <= 15'h0000; // rst counter
   else if (init)
     prd_cntr <= 15'h0000; // Init counter
   else if (prd_cntr >= curr_prd)
@@ -71,6 +73,7 @@ always_ff @(posedge clk or negedge rst_n)
   else 
     state <= nxt_state;
 
+// State Machine logic
 always_comb begin
   nxt_state = state; //default outputs
   piezo = 1'b0;
@@ -124,13 +127,13 @@ always_comb begin
 	curr_dur = C7_dur;
 	piezo = prd_cntr < curr_prd / 2;
 	piezo_n = ~piezo;
-        if (batt_low & dur_cntr >= curr_dur) begin
+        if (batt_low & dur_cntr >= curr_dur) begin // Check reverse condition at the end of the note
 	  init = 1'b1;
 	  curr_prd = G6_prd;
 	  curr_dur = G6_dur;
 	  nxt_state = G6;
         end
-	else if (dur_cntr >= curr_dur) begin
+	else if (dur_cntr >= curr_dur) begin // Play next note when note durration completes
 	  init = 1'b1;
 	  curr_prd = E7_prd;
 	  curr_dur = E7_1_dur;

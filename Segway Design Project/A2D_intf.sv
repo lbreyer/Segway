@@ -1,10 +1,11 @@
 module A2D_intf(clk, rst_n, nxt, lft_ld, rght_ld, steer_pot, batt, SS_n, SCLK, MOSI, MISO);
 
-input clk, rst_n, nxt, MISO;
+input clk, rst_n, nxt, MISO; // Clock, active low asynch reset, next operation, and mstr. in s out signals
 
 output logic SS_n, SCLK, MOSI;
 output reg [11:0] lft_ld, rght_ld, steer_pot, batt;
 
+// Intermediary signals
 logic wrt, done, cnt, update;
 logic [1:0] state, nxt_state, rr_cntr;
 logic [2:0] channel;
@@ -63,20 +64,20 @@ always_ff @(posedge clk or negedge rst_n)
 // beginning of SM
 always_comb begin
   nxt_state = state;
-  wrt = 1'b0;
+  wrt = 1'b0; // Default outputs
   cnt = 1'b0;
   update = 1'b0;
   
   case (state)
     IDLE: begin
-          if (nxt) begin
+          if (nxt) begin // When next signal asserted, begin SPI transaction 1
 	    wrt = 1'b1;
             nxt_state = SPI1;
           end
-          else nxt_state = IDLE;
+          else nxt_state = IDLE; // Wait for next opperation
         end
     SPI1: begin
-             if (done) begin
+             if (done) begin // At the end of the SPI 1 transaction, wait a clock
 	       nxt_state = DEAD;
 	     end
  	     else nxt_state = SPI1;
@@ -89,7 +90,7 @@ always_comb begin
             else nxt_state = DEAD;
            end
     SPI2: begin
-             if (done) begin
+             if (done) begin // At the end of the second SPI transation, signal completion and wait for next
 	       update = 1'b1;
 	       cnt = 1'b1;
 	       nxt_state = IDLE;
