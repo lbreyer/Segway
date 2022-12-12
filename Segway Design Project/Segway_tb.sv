@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module Segway_tb();
 			
 //// Interconnects to DUT/support defined as type wire /////
@@ -52,97 +53,16 @@ UART_tx iTX(.clk(clk),.rst_n(rst_n),.TX(RX_TX),.trmt(send_cmd),.tx_data(cmd),.tx
 rst_synch iRST(.clk(clk),.RST_n(RST_n),.rst_n(rst_n));
 
 initial begin
-  ///Luke's Test incase the tasks do not work.
-  
-  /*clk = 0;
-  RST_n = 0;
-  cmd = 8'h00;
-  send_cmd = 0;
-  rider_lean = 16'h0000;
-  ld_cell_lft = 12'h000;
-  ld_cell_rght = 12'h000;
-  steerPot = 12'h000;
-  batt = 12'h000;
-  OVR_I_lft = 0; 
-  OVR_I_rght = 0;
-  @(posedge clk);
-  @(negedge clk);
-    RST_n = 1; 
-	
-  repeat(100) @(posedge clk);
-    cmd = 8'h67;
-    send_cmd = 1;
-  @(posedge clk);
-  @(negedge clk);
-    send_cmd = 0;
-  repeat(800000) @(posedge clk);
-    rider_lean = 16'h0FFF;
-  repeat(1600000) @(posedge clk);
-    rider_lean = 16'h0000;
-  repeat(800000) @(posedge clk);
-  */
-  //Rewrote with the use of tasks
-  //Test for PID
-  Initialize;
-  ld_cell_lft = 12'h200;
-  ld_cell_rght = 12'h200;
-  
-  repeat(100) @(posedge clk);
-  
-  SendCmd(8'h67);
-
-  repeat(800000) @(posedge clk);
-    rider_lean = 16'h0FFF;
-
-  repeat(1600000) @(posedge clk);
-    rider_lean = 16'h0000;
-
-  repeat(800000) @(posedge clk);
-
+  RIDER_LEAN;
+  RIDER_ON;
+  LEFT_RIGHT;
+  RIDER_OFF;
+  MTR_DRIVE_TEST;
+  STEPPING_OFF;
+  $display("YAHOOO!!!!");
   $stop();
-  //Rider On Test(left and right load cells have already been set.)
-  batt = 12'hFFF;
-  $display("1");
-  check_value(0, iDUT.pwr_up, "pwr_up", "RIDER ON");
-  SendCmd(8'h67);
-
-  repeat(800000) @(posedge clk);
-  $display("2");
-  check_value(1, iDUT.pwr_up, "pwr_up", "RIDER ON");
-  rider_lean = 16'h0FFF;
-
-  //Waiting to test steerpot
-  repeat(2000000) @(posedge clk);
-
-  //Turning Left and Right
-  steerPot = 12'h200;
-  ld_cell_lft = 12'h200;
-  ld_cell_rght = 12'h200;
-
-  repeat(2000000) @(posedge clk);
-  $display("3");
-  check_value(1, ((iPHYS.omega_rght < iPHYS.omega_lft) || (iPHYS.omega_rght > iPHYS.omega_lft)), "left or right ", "Turning_Left_or_Right");
-
-  steerPot = 12'hF00;
-  $display("4");
-  check_value(1, ((iPHYS.omega_rght < iPHYS.omega_lft) || (iPHYS.omega_rght > iPHYS.omega_lft)), "left or right", "Turning_Left_or_Right");
-
-  //Testing Rider OFF
-  ld_cell_lft = 0;
-  ld_cell_rght = 0;
-  repeat(2000000) @(posedge clk);
-  $display("5");
-  check_value(0, iDUT.iBAL.en_steer, "en_steer", "Rider_OFF");
-
-  SendCmd(8'h73);
-  repeat(2000000) @(posedge clk);
-  $display("6");
-  check_value(0, iDUT.pwr_up, "pwr_up", "RIDER ON");
-
-  $stop();
-
 end
-  `include "tb_tasks.sv"
+`include "tb_tests.sv"
 
 always
   #10 clk = ~clk;
